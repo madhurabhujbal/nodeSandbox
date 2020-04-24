@@ -1,12 +1,16 @@
-let num = 3;
 
-let arrNum = arrayGen(num);
-console.log(arrNum);
-
-function arrayGen(num){
+function arrayGen(num, min, max){
     let a = new Array(num);
+
+    if(min == undefined) {
+        min = 0;
+        max = 1000;
+    } else if(max == undefined) {
+        max = 1000;
+    }
+
     for(let i = 0;  i < a.length; i++) {
-        a[i] = randomNumGenBetween(0, 100);
+        a[i] = randomNumGenBetween(min, max);
     }
     return a;
 };
@@ -16,6 +20,4 @@ function randomNumGenBetween(min, max) {
         (Math.random() * (max - min + 1)) + min);
 };
 
-function randomNumGenUntil(max) {
-    return randomNumGenBetween(0, max);
-};
+module.exports = arrayGen;
