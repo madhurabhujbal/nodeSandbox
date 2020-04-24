@@ -5,11 +5,19 @@ const arrayGen = require('../randomNumberGenerator');
 describe('Check if array of random numbers is generated', function() {
     //1. giving 3,2,1,0 parameters
     describe('arryGen function can have 0 to 3 parameters', function() {
-        it('With no arguments', function() {
+        it('With no arguments, result should not be null', function() {
             let result = arrayGen();
-            assert(result != null, 'Result should not be null');
-            assert(result != undefined, 'Result should not be undefined');
-            assert(result.length == 0, 'Result should be an empty array');
+            assert.notEqual(result, null);
+        });
+
+        it('With no arguments, result should not be undefined', function() {
+            let result = arrayGen();
+            assert.notEqual(result, undefined);
+        });
+
+        it('With no arguments, result should be an empty array', function() {
+            let result = arrayGen();
+            assert.equal(result.length, 0);
         });
     });
 });
