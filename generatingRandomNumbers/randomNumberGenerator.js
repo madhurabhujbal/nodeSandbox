@@ -1,5 +1,8 @@
 
 function arrayGen(num, min, max){
+    if(num == undefined) {
+        return [];
+    }
     let a = new Array(num);
 
     if(min == undefined) {
