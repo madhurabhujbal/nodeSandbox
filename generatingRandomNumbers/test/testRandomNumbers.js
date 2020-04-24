@@ -20,9 +20,24 @@ describe('Check if array of random numbers is generated', function() {
             assert.equal(result.length, 0);
         });
     });
+
+    //2. giving negetive parameters
+    describe('arryGen() can take negetive parameters, except for array length', function() {
+        it('With one negetive parameter, result should give an error', function() {
+            assert.throws(()=>{arrayGen(-99)}, RangeError);
+        });
+
+        // it('With no arguments, result should not be undefined', function() {
+        //     let result = arrayGen();
+        //     assert.notEqual(result, undefined);
+        // });
+
+        // it('With no arguments, result should be an empty array', function() {
+        //     let result = arrayGen();
+        //     assert.equal(result.length, 0);
+        // });
+    });
 });
 
-//2. giving negetive parameters
-//3. giving any other datatype other than integer/ fraction
 
-//invalid case tests:
+//3. giving any other datatype other than integer/ fraction
