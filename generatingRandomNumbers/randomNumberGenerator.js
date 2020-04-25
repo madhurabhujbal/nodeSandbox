@@ -5,6 +5,7 @@ function arrayGen(num, min, max){
     } else if(typeof num != 'number') {
         throw "array size is not a number";
     }
+
     let a = new Array(num);
 
     if(min == undefined) {
@@ -12,6 +13,10 @@ function arrayGen(num, min, max){
         max = 1000;
     } else if(max == undefined) {
         max = 1000;
+    }
+
+    if(typeof min != 'number' || typeof max != 'number') {
+        throw "min/max value is not a number";
     }
 
     for(let i = 0;  i < a.length; i++) {
