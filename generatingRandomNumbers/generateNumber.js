@@ -1,4 +1,4 @@
 const arrayGen = require('./randomNumberGenerator.js');
 
-result = arrayGen(1, -2, -99);
+result = arrayGen('');
 console.log(result);

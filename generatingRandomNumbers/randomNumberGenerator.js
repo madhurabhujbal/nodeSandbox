@@ -2,6 +2,8 @@
 function arrayGen(num, min, max){
     if(num == undefined) {
         return [];
+    } else if(typeof num != 'number') {
+        throw "array size is not a number";
     }
     let a = new Array(num);
 

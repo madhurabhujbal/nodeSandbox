@@ -36,7 +36,7 @@ describe('Check if array of random numbers is generated', function() {
     //3. giving any other datatype other than integer/ fraction
     describe('arrayGen() can take only integer parameters', function() {
         it('With any other parameter except integer, result should give an error', function() {
-            assert.throws(()=>{arrayGen('')}, TypeError);
+            assert.throws(()=>{arrayGen('')}, "array size is not a number");
         })
     });
 });
