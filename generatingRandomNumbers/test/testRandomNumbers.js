@@ -22,7 +22,7 @@ describe('Check if array of random numbers is generated', function() {
     });
 
     //2. giving negetive parameters
-    describe('arryGen() can take negetive parameters, except for array length', function() {
+    describe('arrayGen() can take negetive parameters, except for array length', function() {
         it('With one negetive parameter, result should give an error', function() {
             assert.throws(()=>{arrayGen(-99)}, RangeError);
         });
@@ -31,13 +31,14 @@ describe('Check if array of random numbers is generated', function() {
             let result = arrayGen(1, - 2);
             assert.notEqual(result.length, 0);
         });
+    });
 
-        // it('With no arguments, result should be an empty array', function() {
-        //     let result = arrayGen();
-        //     assert.equal(result.length, 0);
-        // });
+    //3. giving any other datatype other than integer/ fraction
+    describe('arrayGen() can take only integer parameters', function() {
+        it('With any other parameter except integer, result should give an error', function() {
+            assert.throws(()=>{arrayGen('')}, TypeError);
+        })
     });
 });
 
 
-//3. giving any other datatype other than integer/ fraction
