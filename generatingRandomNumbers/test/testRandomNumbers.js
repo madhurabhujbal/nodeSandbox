@@ -27,10 +27,10 @@ describe('Check if array of random numbers is generated', function() {
             assert.throws(()=>{arrayGen(-99)}, RangeError);
         });
 
-        // it('With no arguments, result should not be undefined', function() {
-        //     let result = arrayGen();
-        //     assert.notEqual(result, undefined);
-        // });
+        it('With second, third or both arguments negetive, result should not be an empty array', function() {
+            let result = arrayGen(1, - 2);
+            assert.notEqual(result.length, 0);
+        });
 
         // it('With no arguments, result should be an empty array', function() {
         //     let result = arrayGen();
