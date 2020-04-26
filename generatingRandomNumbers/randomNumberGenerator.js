@@ -1,5 +1,5 @@
 
-function arrayGen(num, min, max){
+function arrayGen(num, min, max) {
     if(num == undefined) {
         return [];
     } else if(typeof num != 'number') {

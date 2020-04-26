@@ -1,5 +1,5 @@
 const express = require('express');
-const resultArray = require('./generateNumber');
+const arrayGen = require('./randomNumberGenerator');
 
 const app= express();
 
@@ -10,7 +10,8 @@ app.get("/", (req, res) => {
     let arrLength = req.query.arraylength;
     let minValue = req.query.minValue;
     let maxValue = req.query.maxValue;
-    res.render('index', {result:"[ my array]"});
+    console.log(arrayGen(arrLength, minValue, maxValue));
+    res.render('index', {result: "ans"});
 });
 
 app.listen(5000, () => {
