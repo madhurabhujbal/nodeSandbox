@@ -1,8 +1,14 @@
 <html>
-    <head></head>
-    <body>
-        <h1>
-            Hello, <%=name%> !!
-        </h1>
-    </body>
+    <head>
+    </head>
+<body>
+    <h3>Evaluate!</h3>
+    <form action="/" method="GET">
+        Enter array length : <input name="arraylength" id= "<%= arraylength %>"/><br/>
+        Enter min value : <input name="minValue" id= "<%= minValue %>"/><br/>
+        Enter max value : <input name="maxValue" id="<%= maxValue%>"/><br/>
+        <br/>
+        <input type="submit" value="Submit"/>
+    </form>
+</body>
 </html>

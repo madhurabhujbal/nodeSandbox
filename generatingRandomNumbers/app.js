@@ -6,7 +6,7 @@ app.set('views', __dirname + '/views/');
 app.set('view engine', 'ejs');
 
 app.get("/", (req, res) => {
-    res.render('index', {name : "Madhura"});
+    res.render('index', {arraylength : "9", minValue : "4", maxValue : "56"});
 });
 
 app.listen(5000, () => {
