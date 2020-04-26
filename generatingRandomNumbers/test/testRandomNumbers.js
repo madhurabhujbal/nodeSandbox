@@ -40,9 +40,17 @@ describe('Check if array of random numbers is generated', function() {
         });
 
         it('With second, third or both parameters except numbers, result should give an error', function() {
-            assert.throws(()=>{arrayGen(1, '', '')}, "min/max value is not a number");
+            assert.throws(()=>{arrayGen(1, '', 20.6)}, "min/max value is not a number");
         })
     });
+
+    //4. giving array length as fraction value
+    describe('arrayGen() length cannot be a fraction value', function() {
+        it('With first parameter as fraction, result should give an error', function() {
+            assert.throws(()=>{arrayGen(1.3)}, RangeError);
+        });
+    });
+
 });
 
 
