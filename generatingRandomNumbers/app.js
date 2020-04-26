@@ -1,4 +1,5 @@
 const express = require('express');
+const resultArray = require('./generateNumber');
 
 const app= express();
 
@@ -6,7 +7,10 @@ app.set('views', __dirname + '/views/');
 app.set('view engine', 'ejs');
 
 app.get("/", (req, res) => {
-    res.render('index', {arraylength : "9", minValue : "4", maxValue : "56"});
+    let arrLength = req.query.arraylength;
+    let minValue = req.query.minValue;
+    let maxValue = req.query.maxValue;
+    res.render('index', {result:"[ my array]"});
 });
 
 app.listen(5000, () => {
