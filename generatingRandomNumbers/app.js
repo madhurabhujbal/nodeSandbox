@@ -7,11 +7,11 @@ app.set('views', __dirname + '/views/');
 app.set('view engine', 'ejs');
 
 app.get("/", (req, res) => {
-    let arrLength = req.query.arraylength;
-    let minValue = req.query.minValue;
-    let maxValue = req.query.maxValue;
+    let arrLength = Number(req.query.arraylength);
+    let minValue = Number(req.query.minValue);
+    let maxValue = Number(req.query.maxValue);
     console.log(arrayGen(arrLength, minValue, maxValue));
-    res.render('index', {result: "ans"});
+    res.render('index', {result: arrayGen(arrLength, minValue, maxValue)});
 });
 
 app.listen(5000, () => {
