@@ -8,41 +8,43 @@
 <body>
     <div class="container">
         <div class="jumbotron">
-        <h3>Evaluate!</h3>
-        <form action="/" method="GET">
-            <div class="row">
-                <div class="col-sm-2">Enter array length :</div>
-                <div>
-                    <input name="arraylength" id="arraylength" placeholder="any number" autofocus/><br/>
+            <h3>Evaluate!</h3>
+            <form action="/" method="GET">
+                <div class="row">
+                    <div class="col-sm-2">Enter array length :</div>
+                    <div>
+                        <input name="arraylength" id="arraylength" placeholder="any number" autofocus/><br/>
+                    </div>
                 </div>
-            </div>
-            <br/>
-
-            <div class="row">
-                <div class="col-sm-2">Enter min value :</div>
-                <div>
-                    <input name="minValue" id="minValue" placeholder="default = 0"/><br/>
-                </div>
-            </div>
-            <br/>
-
-            <div class="row">
-                <div class="col-sm-2">Enter max value :</div>
-                <div>
-                    <input name="maxValue" id="maxValue" placeholder="default = 1000"/><br/>
-                </div>
-            </div>
                 <br/>
+
+                <div class="row">
+                    <div class="col-sm-2">Enter min value :</div>
+                    <div>
+                        <input name="minValue" id="minValue" placeholder="default = 0"/><br/>
+                    </div>
+                </div>
+                <br/>
+
+                <div class="row">
+                    <div class="col-sm-2">Enter max value :</div>
+                    <div>
+                        <input name="maxValue" id="maxValue" placeholder="default = 1000"/><br/>
+                    </div>
+                </div>
+                    <br/>
         </div>
-            <input type="submit" value="Submit"/> <br/>
-            <br/>
-        <div class="form-group">
-            <label for=" My Answer"> My Answer: </label>
-            <textarea class="form-control" rows="5" id="My Answer">
-                <%=result%>
-            </textarea>
-        </div>
-        </form>
+
+                <input type="submit" value="Submit"/> <br/>
+                <br/>
+
+            <div class="form-group">
+                <label for=" My Answer"> My Answer: </label>
+                <textarea class="form-control" rows="5" id="My Answer">
+                    <%=result%>
+                </textarea>
+            </div>
+            </form>
     </div>
 </body>
 </html>
