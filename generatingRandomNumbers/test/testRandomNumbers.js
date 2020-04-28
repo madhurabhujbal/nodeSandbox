@@ -8,15 +8,7 @@ describe('Check if array of random numbers is generated', function() {
         it('With no arguments, result should not be null', function() {
             let result = arrayGen();
             assert.notEqual(result, null);
-        });
-
-        it('With no arguments, result should not be undefined', function() {
-            let result = arrayGen();
             assert.notEqual(result, undefined);
-        });
-
-        it('With no arguments, result should be an empty array', function() {
-            let result = arrayGen();
             assert.equal(result.length, 0);
         });
     });
@@ -48,6 +40,14 @@ describe('Check if array of random numbers is generated', function() {
     describe('arrayGen() length cannot be a fraction value', function() {
         it('With first parameter as fraction, result should give an error', function() {
             assert.throws(()=>{arrayGen(1.3)}, RangeError);
+        });
+    });
+
+    //5. For invalid parameter data types
+    describe('arrayGen() cannot take invalid data type parameters', function() {
+        it('With any parameter invalid, result should give an error', function() {
+            let result = arrayGen(NaN);
+            assert.equal(result.length, 0);
         });
     });
 
