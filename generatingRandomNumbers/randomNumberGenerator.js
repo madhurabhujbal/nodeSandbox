@@ -1,6 +1,6 @@
 
 function arrayGen(num, min, max) {
-    if(num == undefined) {
+    if(num == undefined || isNaN(num)) {
         return [];
     } else if(typeof num != 'number') {
         throw "array size is not a number";
