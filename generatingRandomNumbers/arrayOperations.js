@@ -1,22 +1,34 @@
-const arrayGen = require('./randomNumberGenerator');
 
-let result = arrayGen(20);
-console.log("Result array : " + result);
-
-const minimumValue = minValue();
-console.log("Minimum value in array : " + minimumValue);
-//let maxValue = maxValue();
-
-function minValue() {
-    let minValue = result[0];
-    for(let i = 1; i < result.length; i++) {
-        if(minValue > result[i]) {
-            minValue = result[i];
+function arrayOperations() {
+    function minValue() {
+        let minValue = result[0];
+        for(let i = 1; i < result.length; i++) {
+            if(minValue > result[i]) {
+                minValue = result[i];
+            }
         }
+        return minValue;
     }
-    return minValue;
+
+    function maxValue() {
+        let maxValue = result[0];
+        for(let i = 1; i < result.length; i++) {
+            if(maxValue < result[i]) {
+                maxValue = result[i];
+            }
+        }
+        return maxValue;
+    }
+
+    function getAverage(result) {
+        let total = 0;
+        for(let i = 0; i < result.length; i++) {
+            total = total + result[i];
+        }
+        return total / result.length;
+    }
+
+    return getAverage;
 }
 
-// function maxValue() {
-
-// }
+module.exports = arrayOperations;
