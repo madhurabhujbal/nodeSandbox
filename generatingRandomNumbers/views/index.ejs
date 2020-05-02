@@ -38,12 +38,23 @@
                 <input type="submit" value="Submit"/> <br/>
                 <br/>
 
-            <div class="form-group">
-                <label for=" My Answer"> My Answer: </label>
-                <textarea class="form-control" rows="5" id="My Answer">
-                    <%=result%>
-                </textarea>
-            </div>
+                <div class="row">
+                    <label class="col-sm-2 form-control-plaintext" > My Answer:</label>
+                    <div class="col-sm-4">
+                        <label name="result" class="form-control-plaintext" id="result"> <%=result%>
+                        </label>
+                    </div>
+                </div>
+                <br/>
+
+                <div class="row">
+                    <label class="col-sm-3 form-control-plaintext" > Minimum value in result array:</label>
+                    <div class="col-sm-4">
+                        <label class="form-control-plaintext"> <%=arrayMinValue%>
+                        </label>
+                    </div>
+                </div>
+                <br/>
             </form>
     </div>
 </body>
