@@ -14,7 +14,9 @@ app.get("/", (req, res) => {
     let resultArray = arrayGen(arrLength, minValue, maxValue);
     let resultMinValue = arrayOperations().getMinValue(resultArray);
     let resultMaxValue = arrayOperations().getMaxValue(resultArray);
-    res.render('index', {result: resultArray, arrayMinValue: resultMinValue, arrayMaxValue: resultMaxValue});
+    let resultAvgValue = arrayOperations().getAverage(resultArray);
+    res.render('index', {result: resultArray, arrayMinValue: resultMinValue,
+                        arrayMaxValue: resultMaxValue, arrayAvgValue: resultAvgValue});
 });
 
 app.listen(5000, () => {
