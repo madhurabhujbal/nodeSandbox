@@ -13,7 +13,8 @@ app.get("/", (req, res) => {
     let maxValue = Number(req.query.maxValue);
     let resultArray = arrayGen(arrLength, minValue, maxValue);
     let resultMinValue = arrayOperations().getMinValue(resultArray);
-    res.render('index', {result: resultArray, arrayMinValue: resultMinValue});
+    let resultMaxValue = arrayOperations().getMaxValue(resultArray);
+    res.render('index', {result: resultArray, arrayMinValue: resultMinValue, arrayMaxValue: resultMaxValue});
 });
 
 app.listen(5000, () => {
