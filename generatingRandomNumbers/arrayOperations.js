@@ -21,6 +21,9 @@ function arrayOperations() {
     }
 
     function getAverage(result) {
+        if(result.length == 0) {
+            return "";
+        }
         let total = 0;
         for(let i = 0; i < result.length; i++) {
             total = total + result[i];
