@@ -5,75 +5,75 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </head>
-<body>
-    <div class="container">
-        <div class="jumbotron">
-            <h3>Evaluate!</h3>
-            <form action="/" method="GET">
-                <div class="row">
-                    <div class="col-sm-2">Enter array length :</div>
-                    <div>
-                        <input name="arraylength" id="arraylength" placeholder="any number" autofocus/><br/>
+    <body>
+        <div class="container">
+            <div class="jumbotron">
+                <h3>Evaluate!</h3>
+                <form action="/" method="GET">
+                    <div class="row">
+                        <div class="col-sm-2">Enter array length :</div>
+                        <div>
+                            <input name="arraylength" id="arraylength" placeholder="any number" autofocus/><br/>
+                        </div>
                     </div>
-                </div>
-                <br/>
-
-                <div class="row">
-                    <div class="col-sm-2">Enter min value :</div>
-                    <div>
-                        <input name="minValue" id="minValue" placeholder="default = 0"/><br/>
-                    </div>
-                </div>
-                <br/>
-
-                <div class="row">
-                    <div class="col-sm-2">Enter max value :</div>
-                    <div>
-                        <input name="maxValue" id="maxValue" placeholder="default = 1000"/><br/>
-                    </div>
-                </div>
                     <br/>
+
+                    <div class="row">
+                        <div class="col-sm-2">Enter min value :</div>
+                        <div>
+                            <input name="minValue" id="minValue" placeholder="default = 0"/><br/>
+                        </div>
+                    </div>
+                    <br/>
+
+                    <div class="row">
+                        <div class="col-sm-2">Enter max value :</div>
+                        <div>
+                            <input name="maxValue" id="maxValue" placeholder="default = 1000"/><br/>
+                        </div>
+                    </div>
+                    <br/>
+            </div>
+
+            <input type="submit" value="Submit"/> <br/>
+            <br/>
+
+            <div class="row">
+                <label class="col-sm-2 form-control-plaintext" > My Answer:</label>
+                <div class="col-sm-4">
+                    <label name="result" class="form-control-plaintext" id="result"> <%=result%>
+                    </label>
+                </div>
+            </div>
+            <br/>
+
+            <div class="row">
+                <label class="col-sm-3 form-control-plaintext" > Minimum value in result array:</label>
+                <div class="col-sm-4">
+                    <label class="form-control-plaintext"> <%=arrayMinValue%>
+                    </label>
+                </div>
+            </div>
+            <br/>
+
+            <div class="row">
+                <label class="col-sm-3 form-control-plaintext" > Maximum value in result array:</label>
+                <div class="col-sm-4">
+                    <label class="form-control-plaintext"> <%=arrayMaxValue%>
+                    </label>
+                </div>
+            </div>
+            <br/>
+
+            <div class="row">
+                <label class="col-sm-3 form-control-plaintext" > Average value of result array:</label>
+                <div class="col-sm-4">
+                    <label class="form-control-plaintext"> <%=arrayAvgValue%>
+                    </label>
+                </div>
+            </div>
+            <br/>
+                </form>
         </div>
-
-                <input type="submit" value="Submit"/> <br/>
-                <br/>
-
-                <div class="row">
-                    <label class="col-sm-2 form-control-plaintext" > My Answer:</label>
-                    <div class="col-sm-4">
-                        <label name="result" class="form-control-plaintext" id="result"> <%=result%>
-                        </label>
-                    </div>
-                </div>
-                <br/>
-
-                <div class="row">
-                    <label class="col-sm-3 form-control-plaintext" > Minimum value in result array:</label>
-                    <div class="col-sm-4">
-                        <label class="form-control-plaintext"> <%=arrayMinValue%>
-                        </label>
-                    </div>
-                </div>
-                <br/>
-
-                <div class="row">
-                    <label class="col-sm-3 form-control-plaintext" > Maximum value in result array:</label>
-                    <div class="col-sm-4">
-                        <label class="form-control-plaintext"> <%=arrayMaxValue%>
-                        </label>
-                    </div>
-                </div>
-                <br/>
-
-                <div class="row">
-                    <label class="col-sm-3 form-control-plaintext" > Average value of result array:</label>
-                    <div class="col-sm-4">
-                        <label class="form-control-plaintext"> <%=arrayAvgValue%>
-                        </label>
-                    </div>
-                </div>
-                <br/>
-            </form>
-    </div>
-</body>
+    </body>
 </html>
