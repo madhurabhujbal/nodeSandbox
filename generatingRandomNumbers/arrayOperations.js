@@ -1,5 +1,6 @@
 
 function arrayOperations() {
+
     function getMinValue(result) {
         let minValue = result[0];
         for(let i = 1; i < result.length; i++) {
@@ -31,10 +32,12 @@ function arrayOperations() {
         return total / result.length;
     }
 
+
     return {
         getAverage,
         getMinValue,
-        getMaxValue
+        getMaxValue,
+        getSortedArray
     };
 }
 
