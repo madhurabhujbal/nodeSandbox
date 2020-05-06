@@ -1,12 +1,11 @@
 
-    let result = [32, 5, 7, 4, 1, 45];
+    let result = [32, 5, 7, 4, 1, 45, 9, 15];
     console.log("Given array : " + result);
     let swapped = true;
     let count = 0;
 
     while(swapped == true) {
         swapped = false;
-        //for(let j = 1; j <= result.length; j++) {
             for(let i = 1; i < result.length - count; i++) {
                 if(result[i - 1] > result[i]) {
                     let temp = result[i - 1];
@@ -15,9 +14,32 @@
                     swapped = true;
                 }
             }
-            count++;
-            // }
+        count++;
+    }
+        console.log("Sorted Array : " + result);
+
+    //binary search on array
+    let sortedArray = result;
+    let lower = 0;
+    let upper = sortedArray.length - 1;
+    let searchValue = 32 ;
+    console.log("Element to be searched : " + searchValue);
+    let mid;
+
+    while(lower <= upper) {
+        let midValue = getMidValue(lower, upper);
+        //console.log(sortedArray[midValue]);
+        if(searchValue == sortedArray[midValue]) {
+            console.log("Element found at position " + (midValue + 1));
+            break;
+        } else if(searchValue < sortedArray[midValue]) {
+            upper = midValue;
+        } else {
+            lower = midValue;
         }
-    console.log("Sorted Array : " + result);
+    }
 
-
+    function getMidValue(lower, upper) {
+        mid = Math.floor((lower + upper)/2);
+        return mid;
+    }
