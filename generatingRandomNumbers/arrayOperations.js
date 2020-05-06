@@ -36,8 +36,7 @@ function arrayOperations() {
     return {
         getAverage,
         getMinValue,
-        getMaxValue,
-        getSortedArray
+        getMaxValue
     };
 }
 
