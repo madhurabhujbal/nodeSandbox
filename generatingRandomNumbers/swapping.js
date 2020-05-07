@@ -5,7 +5,6 @@ function getSortedArray(givenArray) {
         result[i] = givenArray[i];
     }
     console.log("Given array : " + givenArray);
-    console.log("Copied array : " + result);
     let swapped = true;
     let count = 0;
 
@@ -24,37 +23,35 @@ function getSortedArray(givenArray) {
     return result;
 }
 
-    //binary search on array
-    function getSearchedValue(givenArray) {
+//binary search on array
+function getSearchedValue(givenArray, searchValue) {
 
-        let sortedArray = [];
-        for(let i = 0; i < givenArray.length; i++) {
-            sortedArray[i] = givenArray[i];
-        }
-        console.log("sorted array"+ sortedArray);
-        let lower = 0;
-        let upper = sortedArray.length - 1;
-        let searchValue = 32 ;
-        console.log("Element to be searched : " + searchValue);
-        let mid;
-
-        while(lower <= upper) {
-            let midValue = getMidValue(lower, upper);
-            //console.log(sortedArray[midValue]);
-            if(searchValue == sortedArray[midValue]) {
-                console.log("Element found at position " + (midValue + 1));
-                break;
-            } else if(searchValue < sortedArray[midValue]) {
-                upper = midValue;
-            } else {
-                lower = midValue;
-            }
-        }
-
-        function getMidValue(lower, upper) {
-            mid = Math.floor((lower + upper)/2);
-            return mid;
+    let sortedArray = [];
+    for(let i = 0; i < givenArray.length; i++) {
+        sortedArray[i] = givenArray[i];
+    }
+    console.log("sorted array : "+ sortedArray);
+    let lower = 0;
+    let upper = sortedArray.length - 1;
+    console.log("Element to be searched : " + searchValue);
+    let location = -1;
+    while(lower <= upper) {
+        let mid = getMidValue(lower, upper);
+        //console.log(sortedArray[midValue]);
+        if(searchValue == sortedArray[mid]) {
+            location = mid + 1;
+            break;
+        } else if(searchValue < sortedArray[mid]) {
+            upper = mid - 1;
+        } else {
+            lower = mid + 1;
         }
     }
+    return location;
+}
 
-    module.exports = getSortedArray, getSearchedValue;
+function getMidValue(lower, upper) {
+    mid = Math.floor((lower + upper)/2);
+    return mid;
+}
+module.exports = { getSortedArray, getSearchedValue };
