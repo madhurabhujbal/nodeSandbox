@@ -34,7 +34,7 @@ function getSearchedValue(givenArray, searchValue) {
     let lower = 0;
     let upper = sortedArray.length - 1;
     console.log("Element to be searched : " + searchValue);
-    let location = -1;
+    let location = "Element does not exist in the array";
     while(lower <= upper) {
         let mid = getMidValue(lower, upper);
         //console.log(sortedArray[midValue]);
