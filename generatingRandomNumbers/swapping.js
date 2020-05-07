@@ -31,6 +31,7 @@ function getSortedArray(givenArray) {
         for(let i = 0; i < givenArray.length; i++) {
             sortedArray[i] = givenArray[i];
         }
+        console.log("sorted array"+ sortedArray);
         let lower = 0;
         let upper = sortedArray.length - 1;
         let searchValue = 32 ;

@@ -1,7 +1,7 @@
 const express = require('express');
 const arrayGen = require('./randomNumberGenerator');
 const arrayOperations = require('./arrayOperations');
-const getSortedArray = require('./swapping');
+const getSortedArray, getSearchedValue = require('./swapping');
 
 const app= express();
 
@@ -17,9 +17,10 @@ app.get("/", (req, res) => {
     let resultMaxValue = arrayOperations().getMaxValue(resultArray);
     let resultAvgValue = arrayOperations().getAverage(resultArray);
     let resultSortArray = getSortedArray(resultArray);
+    let resultSearchedValue = getSearchedValue(resultArray);
     res.render('index', {result: resultArray, arrayMinValue: resultMinValue,
                         arrayMaxValue: resultMaxValue, arrayAvgValue: resultAvgValue,
-                        sortedArray: resultSortArray});
+                        sortedArray: resultSortArray, searchedValue: resultSearchedValue});
 });
 
 app.listen(5000, () => {
