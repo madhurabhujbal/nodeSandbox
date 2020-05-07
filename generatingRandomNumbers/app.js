@@ -1,7 +1,7 @@
 const express = require('express');
 const arrayGen = require('./randomNumberGenerator');
 const arrayOperations = require('./arrayOperations');
-const {getSortedArray, getSearchedValue} = require('./swapping');
+const {getSortedArray, getSearchedValue} = require('./sortAndSearch');
 
 
 const app= express();
