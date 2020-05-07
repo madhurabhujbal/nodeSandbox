@@ -25,29 +25,35 @@ function getSortedArray(givenArray) {
 }
 
     //binary search on array
-    // let sortedArray = result;
-    // let lower = 0;
-    // let upper = sortedArray.length - 1;
-    // let searchValue = 32 ;
-    // console.log("Element to be searched : " + searchValue);
-    // let mid;
+    function getSearchedValue(givenArray) {
 
-    // while(lower <= upper) {
-    //     let midValue = getMidValue(lower, upper);
-    //     //console.log(sortedArray[midValue]);
-    //     if(searchValue == sortedArray[midValue]) {
-    //         console.log("Element found at position " + (midValue + 1));
-    //         break;
-    //     } else if(searchValue < sortedArray[midValue]) {
-    //         upper = midValue;
-    //     } else {
-    //         lower = midValue;
-    //     }
-    // }
+        let sortedArray = [];
+        for(let i = 0; i < givenArray.length; i++) {
+            sortedArray[i] = givenArray[i];
+        }
+        let lower = 0;
+        let upper = sortedArray.length - 1;
+        let searchValue = 32 ;
+        console.log("Element to be searched : " + searchValue);
+        let mid;
 
-    // function getMidValue(lower, upper) {
-    //     mid = Math.floor((lower + upper)/2);
-    //     return mid;
-    // }
+        while(lower <= upper) {
+            let midValue = getMidValue(lower, upper);
+            //console.log(sortedArray[midValue]);
+            if(searchValue == sortedArray[midValue]) {
+                console.log("Element found at position " + (midValue + 1));
+                break;
+            } else if(searchValue < sortedArray[midValue]) {
+                upper = midValue;
+            } else {
+                lower = midValue;
+            }
+        }
 
-    module.exports = getSortedArray;
+        function getMidValue(lower, upper) {
+            mid = Math.floor((lower + upper)/2);
+            return mid;
+        }
+    }
+
+    module.exports = getSortedArray, getSearchedValue;
