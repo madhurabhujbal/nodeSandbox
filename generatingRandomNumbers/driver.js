@@ -14,6 +14,6 @@
 // console.log("Average value : " + averageValue(result));
 
 const getSearchedValue = require('./sortAndSearch').getSearchedValue;
-let array = [1, 2, 3, 4, 5];
-result = getSearchedValue(array, NaN);
+let array = [];
+result = getSearchedValue(array, 1);
 console.log(result);

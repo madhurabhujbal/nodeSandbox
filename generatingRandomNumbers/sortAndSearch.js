@@ -26,6 +26,14 @@ function getSortedArray(givenArray) {
 //binary search on array
 function getSearchedValue(givenArray, searchValue) {
 
+    if(isNaN(searchValue)) {
+        return "Please enter a valid number for search";
+    }
+
+    if(givenArray.length == 0 || searchValue < givenArray[0] || searchValue > givenArray[givenArray.length - 1]) {
+        return "Value out of range";
+    }
+
     let sortedArray = [];
     for(let i = 0; i < givenArray.length; i++) {
         sortedArray[i] = givenArray[i];
@@ -35,12 +43,9 @@ function getSearchedValue(givenArray, searchValue) {
     let upper = sortedArray.length - 1;
     console.log("Element to be searched : " + searchValue);
     let location = "";
-    if(isNaN(searchValue)) {
-        return "Please enter a valid number for search";
-    }
+
     while(lower <= upper) {
         let mid = getMidValue(lower, upper);
-        //console.log(sortedArray[midValue]);
         if(searchValue == sortedArray[mid]) {
             location = mid + 1;
             break;
