@@ -43,10 +43,8 @@ function getSearchedValue(givenArray, searchValue) {
             break;
         } else if(searchValue < sortedArray[mid]) {
             upper = mid - 1;
-        } else if(searchValue > sortedArray[mid]) {
-            lower = mid + 1;
         } else {
-            return "Element does not exist in the array";
+            lower = mid + 1;
         }
     }
     return location;
