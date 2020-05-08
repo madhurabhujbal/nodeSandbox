@@ -35,6 +35,9 @@ function getSearchedValue(givenArray, searchValue) {
     let upper = sortedArray.length - 1;
     console.log("Element to be searched : " + searchValue);
     let location = "";
+    if(isNaN(searchValue)) {
+        return "Please enter a valid number for search";
+    }
     while(lower <= upper) {
         let mid = getMidValue(lower, upper);
         //console.log(sortedArray[midValue]);
