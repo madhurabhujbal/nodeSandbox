@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "linked-list": "^2.1.0"
+    "chai": "^4.2.0",
+    "linked-list": "^2.1.0",
+    "mocha": "^7.1.2"
   }
 }
