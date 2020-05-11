@@ -24,18 +24,17 @@ function addListItem(head, num) {
 
 function deleteListItem(head, number) {
     let current = head;
-    let flag = false;
     for(current = head; current != undefined; current = current.next) {
         if(current.value == number) {
-            flag = true;
             break;
         }
     }
 
-    if(flag == false) {
+    if(current == undefined) {
         return "Element not present in the list";
     }
 
+    current = head;
     while(current.next.value != number) {
         current = current.next;
     }
@@ -55,7 +54,7 @@ head = addListItem(head, 79);
 head = addListItem(head, 77);
 console.log("After adding list item : ");
 printList(head);
-let result = deleteListItem(head, 39);
+let result = deleteListItem(head, 45);
 console.log(result);
 console.log("After deleting list item : ");
 printList(head);
