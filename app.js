@@ -1,4 +1,5 @@
 const addListItem = require('./addingListItem');
+const deleteListItem = require('./deletingListItem');
 
 function printList(head) {
     let current = head;
