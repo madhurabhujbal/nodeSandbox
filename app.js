@@ -24,21 +24,21 @@ function addListItem(head, num) {
 
 function deleteListItem(head, number) {
     let current = head;
-    for(current = head; current != undefined; current = current.next) {
+    let previous = undefined;
+    while(current != undefined) {
+
         if(current.value == number) {
-            break;
+            //match found
+            previous.next = current.next;
+            return;
         }
+        previous = current;
+        current = current.next;
     }
 
     if(current == undefined) {
         return "Element not present in the list";
     }
-
-    current = head;
-    while(current.next.value != number) {
-        current = current.next;
-    }
-    current.next = current.next.next;
 }
 
 let head = {value: 89, next: undefined};
@@ -54,7 +54,7 @@ head = addListItem(head, 79);
 head = addListItem(head, 77);
 console.log("After adding list item : ");
 printList(head);
-let result = deleteListItem(head, 45);
+let result = deleteListItem(head, 450);
 console.log(result);
 console.log("After deleting list item : ");
 printList(head);
