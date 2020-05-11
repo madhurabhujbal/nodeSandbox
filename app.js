@@ -1,13 +1,4 @@
-const addListItem = require('./addingListItem');
-const deleteListItem = require('./deletingListItem');
-
-function printList(head) {
-    let current = head;
-    while(current != undefined) {
-        console.log(current.value);
-        current = current.next;
-    }
-}
+const {printList, addListItem, deleteListItem} = require('./linkedListOperations');
 
 let head = {value: 89, next: undefined};
 let node1 = {value: 45, next: undefined};
