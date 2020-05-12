@@ -23,6 +23,27 @@
         return head;
     }
 
+    function addItemInMiddle(head, pos, number) {
+        let position = pos;
+        if(position == 1) {
+            head = {value: number, next: head};
+            return head;
+        }
+        if(head == undefined) {
+            console.log ("Cannot add element on this position as list is empty");
+        }
+
+        let count = 1;
+        let current = head;
+        while(count != position - 1) {
+            current = current.next;
+            count++;
+        }
+        let newNode = {value: number, next: current.next};
+        current.next = newNode;
+        return head;
+    }
+
     function deleteListItem(head, number) {
         if(head == undefined) {
             return "List is empty";
@@ -48,4 +69,4 @@
         }
     }
 
-module.exports = {printList, addListItem, deleteListItem};
+module.exports = {printList, addListItem, addItemInMiddle, deleteListItem};

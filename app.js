@@ -1,4 +1,4 @@
-const {printList, addListItem, deleteListItem} = require('./linkedListOperations');
+const {printList, addListItem, addItemInMiddle, deleteListItem} = require('./linkedListOperations');
 
 let head = {value: 89, next: undefined};
 let node1 = {value: 45, next: undefined};
@@ -15,5 +15,8 @@ console.log("After adding list item : ");
 printList(head);
 head = deleteListItem(head, 89);
 console.log("After deleting list item : ");
+printList(head);
+head = addItemInMiddle(head, 2, 11);
+console.log("After adding list item in middle: ");
 printList(head);
 
