@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const {addListItem, addItemInMiddle, deleteListItem} = require('../linkedListOperations');
+const {addListItem, addItemInMiddle, deleteListItem, getArray} = require('../linkedListOperations');
 
 
 describe("With an empty linked-list", function() {
@@ -21,6 +21,8 @@ describe("If position of element to be inserted exceeds linked-list length", fun
         head = addListItem(head, 89);
         head = addListItem(head, 819);
         head = addItemInMiddle(head, 5, 34);
+        //let array = getArray(head);
+        // let count = 1;
         // assert.equal(head, " ");
     });
 });

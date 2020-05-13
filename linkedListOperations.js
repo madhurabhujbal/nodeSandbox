@@ -35,13 +35,29 @@
 
         let count = 1;
         let current = head;
-        while(count != position - 1) {
+        while(current != undefined && count != position - 1) {
             current = current.next;
             count++;
+        }
+        if(current == undefined) {
+            console.log("Position exceeds list size: " + (count - 1));
+            return head;
         }
         let newNode = {value: number, next: current.next};
         current.next = newNode;
         return head;
+    }
+
+    function getArray(head) {
+        let array = [];
+        let count = 1;
+        let current = head;
+        while(current != undefined) {
+            array.push(current.value);
+            current = current.next;
+            count++;
+        }
+        return array;
     }
 
     function deleteListItem(head, number) {
@@ -69,4 +85,4 @@
         }
     }
 
-module.exports = {printList, addListItem, addItemInMiddle, deleteListItem};
+module.exports = {printList, addListItem, addItemInMiddle, deleteListItem, getArray};
