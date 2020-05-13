@@ -50,12 +50,10 @@
 
     function getArray(head) {
         let array = [];
-        let count = 1;
         let current = head;
         while(current != undefined) {
             array.push(current.value);
             current = current.next;
-            count++;
         }
         return array;
     }
