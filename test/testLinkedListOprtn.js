@@ -25,21 +25,33 @@ describe("If position of element to be inserted exceeds linked-list length", fun
 });
 
 describe("If linked-list is passed to getArray()", function() {
-    let head = undefined;
-    head = addListItem(head, 89);
-    head = addListItem(head, 214);
-    head = addListItem(head, 65);
-    let expArray = [89, 214, 65]
-    let actArray = getArray(head);
-
-    it("Should return array with same size", function() {
-        assert.equal(expArray.length, actArray.length);
+    describe("With an empty linked list passed to function, it:", function() {
+        let head = undefined;
+        let expArray = [];
+        let actArray = [];
+        it("Should return an empty array", function() {
+            head = getArray(head);
+            assert.equal(expArray.length, actArray.length);
+        });
     });
 
-    it("Should return array with same and elements in same position as linked-list", function() {
-        for(let count = 0; count < expArray.length; count++) {
-            assert.equal(expArray[count], actArray[count]);
-        }
+    describe("With non-empty linked list passed to function, it: ", function() {
+        let head = undefined;
+        head = addListItem(head, 89);
+        head = addListItem(head, 214);
+        head = addListItem(head, 65);
+        let expArray = [89, 214, 65]
+        let actArray = getArray(head);
+
+        it("Should return array with same size", function() {
+            assert.equal(expArray.length, actArray.length);
+        });
+
+        it("Should return array with same and elements in same position as linked-list", function() {
+            for(let count = 0; count < expArray.length; count++) {
+                assert.equal(expArray[count], actArray[count]);
+            }
+        });
     });
 });
 
