@@ -21,10 +21,21 @@ describe("If position of element to be inserted exceeds linked-list length", fun
         head = addListItem(head, 89);
         head = addListItem(head, 819);
         head = addItemInMiddle(head, 5, 34);
-        //let array = getArray(head);
-        // let count = 1;
-        // assert.equal(head, " ");
     });
+});
+
+describe("If linked-list is passed to getArray()", function() {
+    let head = undefined;
+    head = addListItem(head, 89);
+    head = addListItem(head, 214);
+    head = addListItem(head, 65);
+
+    it("Should return array with same size and elements as linked-list", function() {
+        let expArray = [89, 214, 65]
+        let actArray = getArray(head);
+        assert.equal(expArray.length, actArray.length);
+    });
+
 });
 
 // describe("By passing element that is not present in linked-list", function() {
