@@ -55,10 +55,14 @@ describe("If linked-list is passed to getArray()", function() {
     });
 });
 
-// describe("By passing element that is not present in linked-list", function() {
-//     it("Searching element should return a warning message", function() {
-//         // let head = deleteListItem({head: {value: 87, next: undefined}, node1: {value: 56, next: undefined}}, 99);
-//         // assert.equal(head, "Element not present in the list");
+describe("By passing element that is not present in linked-list : ", function() {
+    it("Linked list size should be same i.e unchanged", function() {
+        let head = undefined;
+        head = addListItem(head, 89);
+        head = addListItem(head, 214);
+        head = addListItem(head, 65);
+        head = deleteListItem(head, 99);
+        assert.equal(head, head);
 
-//     });
-// });
+    });
+});
