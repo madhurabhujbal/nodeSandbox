@@ -29,13 +29,18 @@ describe("If linked-list is passed to getArray()", function() {
     head = addListItem(head, 89);
     head = addListItem(head, 214);
     head = addListItem(head, 65);
+    let expArray = [89, 214, 65]
+    let actArray = getArray(head);
 
-    it("Should return array with same size and elements as linked-list", function() {
-        let expArray = [89, 214, 65]
-        let actArray = getArray(head);
+    it("Should return array with same size", function() {
         assert.equal(expArray.length, actArray.length);
     });
 
+    it("Should return array with same and elements in same position as linked-list", function() {
+        for(let count = 0; count < expArray.length; count++) {
+            assert.equal(expArray[count], actArray[count]);
+        }
+    });
 });
 
 // describe("By passing element that is not present in linked-list", function() {
