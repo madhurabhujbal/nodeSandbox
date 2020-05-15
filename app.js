@@ -1,4 +1,4 @@
-const {printList, addListItem, addItemInMiddle, deleteListItem, getArray} = require('./linkedListOperations');
+const {printList, addListItem, addItemInMiddle, deleteListItem, getArray, getPosition} = require('./linkedListOperations');
 
 let head = {value: 89, next: undefined};
 let node1 = {value: 45, next: undefined};
@@ -20,5 +20,5 @@ head = addItemInMiddle(head, 20, 11);
 console.log("After adding list item in middle: ");
 printList(head);
 let array = getArray(head);
-console.log(array);
+
 
