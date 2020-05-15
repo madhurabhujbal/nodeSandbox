@@ -1,5 +1,5 @@
-const assert = require('chai').assert;
-const {addListItem, addItemInMiddle, deleteListItem, getArray} = require('../linkedListOperations');
+ const assert = require('chai').assert;
+ const {addListItem, addItemInMiddle, deleteListItem, getArray} = require('../linkedListOperations');
 
 
 describe("With an empty linked-list", function() {
@@ -54,14 +54,23 @@ describe("If linked-list is passed to getArray()", function() {
     });
 });
 
+let head = undefined;
+head = addListItem(head, 89);
+head = addListItem(head, 214);
+head = addListItem(head, 16);
+head = addListItem(head, 90);
+head = addListItem(head, 67);
+let beforeArray = getArray(head);
+head = deleteListItem(head, 99);
+let afterArray = getArray(head);
 describe("By passing element that is not present in linked-list : ", function() {
-    it("Linked list size should be same i.e unchanged", function() {
-        let head = undefined;
-        head = addListItem(head, 89);
-        head = addListItem(head, 214);
-        head = addListItem(head, 65);
-        head = deleteListItem(head, 65);
-        //assert.equal(head, head);
+    it("Linked list size should remain unchanged", function() {
+        assert.equal(beforeArray.length, afterArray.length);
+    });
 
+    it("Elments in linked-list before and after search should remain same", function() {
+        for(let count = 0; count < beforeArray.length; count++) {
+            assert.equal(beforeArray[count], afterArray[count]);
+        }
     });
 });
