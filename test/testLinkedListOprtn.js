@@ -1,5 +1,5 @@
  const assert = require('chai').assert;
- const {addListItem, addItemInMiddle, deleteListItem, getArray} = require('../linkedListOperations');
+ const {addListItem, addItemInMiddle, deleteListItem, getArray, getPosition} = require('../linkedListOperations');
 
 
 describe("With an empty linked-list", function() {
@@ -83,6 +83,7 @@ describe("By passing element that is present in linked-list : ", function() {
     head = addListItem(head, 90);
     head = addListItem(head, 67);
     let beforeArray = getArray(head);
+    let position = getPosition(head, 16);
     head = deleteListItem(head, 16);
     let afterArray = getArray(head);
 
@@ -91,7 +92,6 @@ describe("By passing element that is present in linked-list : ", function() {
     });
 
     it("Elments in linked-list before and after deleted item should remain same", function() {
-        let position = 3;
         let count;
             for(count = 0; count < beforeArray.length && count < position - 1; count++) {
                 assert.equal(beforeArray[count], afterArray[count]);
