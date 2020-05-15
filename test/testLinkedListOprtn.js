@@ -54,14 +54,14 @@ describe("If linked-list is passed to getArray()", function() {
     });
 });
 
-let head = undefined;
-head = addListItem(head, 89);
-head = addListItem(head, 214);
-head = addListItem(head, 16);
-head = addListItem(head, 90);
-head = addListItem(head, 67);
-let beforeArray = getArray(head);
 describe("By passing element that is not present in linked-list : ", function() {
+    let head = undefined;
+    head = addListItem(head, 89);
+    head = addListItem(head, 214);
+    head = addListItem(head, 16);
+    head = addListItem(head, 90);
+    head = addListItem(head, 67);
+    let beforeArray = getArray(head);
     head = deleteListItem(head, 99);
     let afterArray = getArray(head);
     it("Linked list size should remain unchanged", function() {
@@ -76,9 +76,32 @@ describe("By passing element that is not present in linked-list : ", function() 
 });
 
 describe("By passing element that is present in linked-list : ", function() {
+    let head = undefined;
+    head = addListItem(head, 89);
+    head = addListItem(head, 214);
+    head = addListItem(head, 16);
+    head = addListItem(head, 90);
+    head = addListItem(head, 67);
+    let beforeArray = getArray(head);
     head = deleteListItem(head, 16);
     let afterArray = getArray(head);
+
     it("Linked list size should be changed", function() {
-        assert.notEqual(beforeArray.length, afterArray.length);
+        assert.equal(beforeArray.length - 1, afterArray.length);
+    });
+
+    it("Elments in linked-list before and after deleted item should remain same", function() {
+        let position = 3;
+        let count;
+            for(count = 0; count < beforeArray.length && count < position - 1; count++) {
+                assert.equal(beforeArray[count], afterArray[count]);
+            }
+            let afterPos = count;
+            count++;
+            for(; count < beforeArray.length; count++) {
+                assert.equal(beforeArray[count], afterArray[afterPos]);
+                afterPos++;
+            }
+
     });
 });
