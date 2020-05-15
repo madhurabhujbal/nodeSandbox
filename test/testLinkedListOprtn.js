@@ -61,9 +61,9 @@ head = addListItem(head, 16);
 head = addListItem(head, 90);
 head = addListItem(head, 67);
 let beforeArray = getArray(head);
-head = deleteListItem(head, 99);
-let afterArray = getArray(head);
 describe("By passing element that is not present in linked-list : ", function() {
+    head = deleteListItem(head, 99);
+    let afterArray = getArray(head);
     it("Linked list size should remain unchanged", function() {
         assert.equal(beforeArray.length, afterArray.length);
     });
@@ -72,5 +72,13 @@ describe("By passing element that is not present in linked-list : ", function() 
         for(let count = 0; count < beforeArray.length; count++) {
             assert.equal(beforeArray[count], afterArray[count]);
         }
+    });
+});
+
+describe("By passing element that is present in linked-list : ", function() {
+    head = deleteListItem(head, 16);
+    let afterArray = getArray(head);
+    it("Linked list size should be changed", function() {
+        assert.notEqual(beforeArray.length, afterArray.length);
     });
 });
