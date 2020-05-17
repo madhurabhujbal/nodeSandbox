@@ -1,7 +1,12 @@
 
 function push(stack, number) {
-    let num = number
-    stack.push(num);
+    let top = stack.length;
+    if(top == 0) {
+        stack.push(number);
+        top = 1;
+    }
+    stack.push(number);
+    top = top + 1;
 }
 
 function printStack(stack) {

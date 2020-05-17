@@ -6,6 +6,11 @@ describe("For empty stack : ", function() {
     it("Should return error message for pop()", function() {
         assert.equal(pop(stack), "Stack underflow error");
     });
+
+    it("Should add number to stack", function() {
+        push(stack, 67);
+        assert.equal(stack[stack.length -1], 67);
+    });
 });
 
 describe("For non-empty stack : ", function() {
