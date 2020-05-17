@@ -1,7 +1,5 @@
 
-let stack = [];
-
-function push(number) {
+function push(stack, number) {
     let num = number
     stack.push(num);
 }
@@ -10,7 +8,7 @@ function printStack(stack) {
     console.log(stack);
 }
 
-function pop() {
+function pop(stack) {
     let top = stack.length;
     if(top == 0) {
         return "Stack underflow error";
@@ -19,11 +17,5 @@ function pop() {
     return stack.pop();
 }
 
-push(9);
-push(17);
-push(344);
-push(236);
-printStack(stack);
-console.log(pop());
-printStack(stack);
+module.exports = {push, printStack, pop};
 
