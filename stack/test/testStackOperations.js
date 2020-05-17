@@ -1,4 +1,4 @@
-const {push, printStack, pop} = require('../stackOperations');
+const {push, pop, dequeStack} = require('../stackOperations');
 const assert = require('chai').assert;
 
 describe("For empty stack : ", function() {
@@ -20,8 +20,14 @@ describe("For non-empty stack : ", function() {
     });
 
     it("Should add number to the end of stack", function() {
-        push(stack, 78);
-        assert.equal(stack[stack.length -1], 78);
+        push(stack, 88);
+        assert.equal(stack[stack.length -1], 88);
+    });
+
+    it("Should return first element in stack for dequeStack()", function() {
+        let firstElement = dequeStack(stack);
+        assert.equal(firstElement, 90);
+        assert.equal(stack[0], 34);
     });
 });
 

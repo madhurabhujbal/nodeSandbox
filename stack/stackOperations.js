@@ -22,5 +22,12 @@ function pop(stack) {
     return stack.pop();
 }
 
-module.exports = {push, printStack, pop};
+function dequeStack(stack) {
+    if(stack.length == 0) {
+        return "Stack underflow error";
+    }
+    return stack.shift();
+}
+
+module.exports = {push, printStack, pop, dequeStack};
 
