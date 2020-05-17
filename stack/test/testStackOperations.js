@@ -18,5 +18,10 @@ describe("For non-empty stack : ", function() {
     it("Should return last element in stack for pop()", function() {
         assert.equal(pop(stack), 78);
     });
+
+    it("Should add number to the end of stack", function() {
+        push(stack, 78);
+        assert.equal(stack[stack.length -1], 78);
+    });
 });
 
