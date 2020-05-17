@@ -24,6 +24,6 @@ push(17);
 push(344);
 push(236);
 printStack(stack);
-pop();
+console.log(pop());
 printStack(stack);
 
