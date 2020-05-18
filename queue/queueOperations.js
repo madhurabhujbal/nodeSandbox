@@ -1,7 +1,6 @@
 
 function enqueue(Queue, number) {
     Queue.push(number);
-    return Queue;
 }
 
 function dequeue(Queue) {

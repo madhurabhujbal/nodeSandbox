@@ -6,11 +6,13 @@ describe("for empty queue : ", function() {
     it("Should return warning msg for dequeue()", function() {
         let msg = dequeue(Queue);
         assert.equal(msg, "Queue is empty");
+        assert.equal(Queue.length, 0);
     });
 
     it("Should add element to queue for enqueue()", function() {
         enqueue(Queue, 61);
         assert.equal(Queue, 61);
+        assert.equal(Queue.length, 1);
     });
 });
 
