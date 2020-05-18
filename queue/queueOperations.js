@@ -2,13 +2,7 @@
 //Queue operations: enqueue, dequeue, print,
 
 function enqueue(Queue, number) {
-    let top = 0;
-    if(Queue.length == 0) {
-        Queue.push(number);
-        top = 1;
-    }
     Queue.push(number);
-    top = top + 1;
     return Queue;
 }
 
