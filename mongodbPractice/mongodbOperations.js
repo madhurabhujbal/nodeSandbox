@@ -16,7 +16,8 @@ MongoClient.connect(url, function(err, db) {
         //console.log("Collection created!!");
     dbo.collection("customers").insertMany(myobject, function(err, res) {
     //dbo.collection("customers").find({}, { projection: { _id:0 }, sort}).toArray(function(err, res) {
-    dbo.collection("customers").find({address: /^Y/ }, {projection: {_id: 0}}).toArray(function(err, res) {
+    //dbo.collection("customers").find({_id: /^0/ }, {projection: {name: 0}}).toArray(function(err, res) {
+    dbo.collection("customers").find({}, {projection: {_id: 0}}).sort({address: 1}).toArray(function(err, res) {
         if(err) throw err;
         console.log(res);
         db.close();
