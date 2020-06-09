@@ -1,6 +1,6 @@
 
 
-function getSortedById(empArray) {
+function getSortedById(empArray, property) {
     let swapped = true;
     //continue until no more swapping
     while(swapped == true) {
@@ -8,7 +8,7 @@ function getSortedById(empArray) {
         //check for all elements
         for(let i = 0; i < empArray.length - 1; i++) {
             //if current is greater than next
-            if(empArray[i]['id'] > empArray[i + 1]['id']) {
+            if(empArray[i][property] > empArray[i + 1][property]) {
                 //swap the elements
                 let temp = empArray[i];
                 empArray[i] = empArray[i + 1];
@@ -24,5 +24,7 @@ let empArray = [{name: "Madhura", id : 28, age : 19},
                 {name: "Jerry", id : 59, age : 23},
                 {name: "Ben", id : 24, age : 33}];
 console.log(empArray);
-getSortedById(empArray);
+getSortedById(empArray, 'id');
+console.log(empArray);
+getSortedById(empArray, 'age');
 console.log(empArray);
