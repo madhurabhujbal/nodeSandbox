@@ -1,0 +1,1 @@
+const {checkIfPalindrome} = require ('./palindrome');
