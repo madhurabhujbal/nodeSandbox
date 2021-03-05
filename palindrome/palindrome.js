@@ -1,6 +1,6 @@
-function checkIfPalindrome(){
+function checkIfPalindrome(name){
 
-    return 'yes';
+    return true;
 }
 
 module.exports = {checkIfPalindrome};
