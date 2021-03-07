@@ -14,5 +14,3 @@ console.log(division);
 
 let averaging = average(10, 2);
 console.log(averaging);
-
-
