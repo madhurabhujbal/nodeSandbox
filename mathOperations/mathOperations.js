@@ -17,4 +17,10 @@
         return multiplicationResult;
     }
 
-module.exports = {add, subtract, multiply};
+    function divide(num1, num2) {
+        console.log(`Division of ${num1} and ${num2} is:`);
+        let divisionResult = num1 / num2;
+        return divisionResult;
+    }
+
+module.exports = {add, subtract, multiply, divide};
