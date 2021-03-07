@@ -23,4 +23,10 @@
         return divisionResult;
     }
 
-module.exports = {add, subtract, multiply, divide};
+    function average(num1, num2) {
+        console.log(`Average of ${num1} and ${num2} is:`);
+        let averageResult = (num1 + num2) / 2;
+        return averageResult;
+    }
+
+module.exports = {add, subtract, multiply, divide, average};

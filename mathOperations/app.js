@@ -1,4 +1,4 @@
-const {add, subtract, multiply, divide} = require('./mathOperations');
+const {add, subtract, multiply, divide, average} = require('./mathOperations');
 
 let addition = add(10, 2);
 console.log(addition);
@@ -11,5 +11,8 @@ console.log(multiplication);
 
 let division = divide(10, 2);
 console.log(division);
+
+let averaging = average(10, 2);
+console.log(averaging);
 
 
