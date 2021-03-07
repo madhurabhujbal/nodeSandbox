@@ -1,4 +1,9 @@
-const {add} = require('./mathOperations');
+const {add, subtract} = require('./mathOperations');
 
-let answer = add(1, 2);
-console.log(answer);
+let addition = add(10, 2);
+console.log(addition);
+
+let subtraction = subtract(10, 2);
+console.log(subtraction);
+
+
