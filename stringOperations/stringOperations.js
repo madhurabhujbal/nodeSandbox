@@ -6,10 +6,16 @@ function calculateStringLength(givenString) {
     else if(givenString == '') {
         return `empty string`;
     }
-    
-    console.log(givenString[0]);
-    let counter = 1;
-    return 1;
+
+    let counter = 0;
+    let i = 0;
+    let currentValue = givenString[i];
+    while(currentValue !== undefined) {
+        i = i + 1;
+        counter = counter + 1;
+        currentValue = givenString[i];
+    }
+        return counter;
 }
 
 module.exports = {calculateStringLength}
