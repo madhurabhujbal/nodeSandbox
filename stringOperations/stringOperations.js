@@ -19,14 +19,12 @@ function calculateStringLength(givenString) {
 }
 
 function findCharIndex(givenString, charToFind) {
-    let index = 1;
     for(let i = 0; i < givenString.length; i++) {
         if(givenString[i] == charToFind) {
-            return index;
+            return i + 1;
         }
-        index = index + 1;
     }
-    return -1;
+    return `${charToFind} does not exist in ${givenString}`;
 }
 
 module.exports = {calculateStringLength, findCharIndex}
