@@ -23,14 +23,24 @@ function findCharIndex(givenString, charToFind) {
     if(charToFind == '' || charToFind == undefined) {
         return -1;
     }
-    
-    //if char is found on multiple positions
+
     for(let i = 0; i < givenString.length; i++) {
         if(givenString[i] == charToFind) {
             return i + 1;
         }
     }
-    return `${charToFind} does not exist in ${givenString}`;
+    return -1;
 }
 
-module.exports = {calculateStringLength, findCharIndex}
+//for char occurs multiple times in a string
+function findCharIndexes(givenString, charToFind) {
+    let indexArray = [];
+    for (let i = 0; i < givenString.length; i++) {
+        if(givenString[i] == charToFind) {
+            indexArray.push(i + 1);
+        }
+    }
+    return indexArray;
+}
+
+module.exports = {calculateStringLength, findCharIndex, findCharIndexes}
