@@ -19,6 +19,12 @@ function calculateStringLength(givenString) {
 }
 
 function findCharIndex(givenString, charToFind) {
+    //if char is empty or undefined
+    if(charToFind == '' || charToFind == undefined) {
+        return -1;
+    }
+    
+    //if char is found on multiple positions
     for(let i = 0; i < givenString.length; i++) {
         if(givenString[i] == charToFind) {
             return i + 1;
