@@ -18,4 +18,8 @@ function calculateStringLength(givenString) {
         return counter;
 }
 
-module.exports = {calculateStringLength}
+function findCharIndex(givenString, charToFind) {
+    return true;
+}
+
+module.exports = {calculateStringLength, findCharIndex}
