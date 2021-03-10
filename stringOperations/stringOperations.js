@@ -53,7 +53,21 @@ function findSubstringIndexes(givenString, subStringToFind) {
     if(subStringToFind == '' || subStringToFind == undefined) {
         return -1;
     }
-    return 1;
+
+    let foundPosition;
+    for (let i = 0; i < givenString.length; i++) {
+        if(subStringToFind[0] == givenString[i]) {
+            foundPosition = i;
+            for(let j = 1; j < subStringToFind.length; j++) {
+                if(subStringToFind[j] == givenString[foundPosition + j]) {
+                    continue;
+                }
+                return -1;
+            }
+        }
+        continue;
+    }
+    return foundPosition;
 }
 
 module.exports = {calculateStringLength, findCharIndex, findCharIndexes, findSubstringIndexes}
