@@ -48,4 +48,8 @@ function findCharIndexes(givenString, charToFind) {
     return indexArray;
 }
 
-module.exports = {calculateStringLength, findCharIndex, findCharIndexes}
+function findSubstringIndexes(givenString, subStringToFind) {
+    return 1;
+}
+
+module.exports = {calculateStringLength, findCharIndex, findCharIndexes, findSubstringIndexes}
