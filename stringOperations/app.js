@@ -10,5 +10,4 @@ let charIndex = stringOperations.findCharIndex(givenString, charToFind);
 console.log(`Position of char ${charToFind} in ${givenString} is ${charIndex}`);
 
 let charIndexes = stringOperations.findCharIndexes(givenString, charToFind);
-console.log(charIndexes);
 console.log(`Position of char ${charToFind} in ${givenString} are ${charIndexes}`);

@@ -34,6 +34,11 @@ function findCharIndex(givenString, charToFind) {
 
 //for char occurs multiple times in a string
 function findCharIndexes(givenString, charToFind) {
+    //if char is empty or undefined
+    if(charToFind == '' || charToFind == undefined) {
+        return -1;
+    }
+    
     let indexArray = [];
     for (let i = 0; i < givenString.length; i++) {
         if(givenString[i] == charToFind) {
