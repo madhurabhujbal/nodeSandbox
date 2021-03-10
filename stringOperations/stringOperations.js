@@ -49,6 +49,10 @@ function findCharIndexes(givenString, charToFind) {
 }
 
 function findSubstringIndexes(givenString, subStringToFind) {
+    //if substring to search is empty or undefined
+    if(subStringToFind == '' || subStringToFind == undefined) {
+        return -1;
+    }
     return 1;
 }
 
