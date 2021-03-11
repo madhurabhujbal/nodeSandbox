@@ -1,10 +1,8 @@
 function calculateStringLength(givenString) {
-    if(givenString == undefined) {
-        return `undefined`;
-    }
-
-    else if(givenString == '') {
-        return `empty string`;
+    //check if given string is empty or undefined
+    let isInvalid = ifStringEmptyOrUndef(givenString);
+    if(isInvalid) {
+        return -1;
     }
 
     let counter = 0;
@@ -19,8 +17,14 @@ function calculateStringLength(givenString) {
 }
 
 function findCharIndex(givenString, charToFind) {
+    //check if given string is empty or undefined
+    let isInvalid = ifStringEmptyOrUndef(givenString);
+    if(isInvalid) {
+        return -1;
+    }
     //if char is empty or undefined
-    if(charToFind == '' || charToFind == undefined) {
+    let isCharInvalid = ifCharEmptyOrUndef(charToFind);
+    if(isCharInvalid) {
         return -1;
     }
 
@@ -34,11 +38,17 @@ function findCharIndex(givenString, charToFind) {
 
 //for char occurs multiple times in a string
 function findCharIndexes(givenString, charToFind) {
-    //if char is empty or undefined
-    if(charToFind == '' || charToFind == undefined) {
+    //check if given string is empty or undefined
+    let isInvalid = ifStringEmptyOrUndef(givenString);
+    if(isInvalid) {
         return -1;
     }
-    
+    //if char is empty or undefined
+    let isCharInvalid = ifCharEmptyOrUndef(charToFind);
+    if(isCharInvalid) {
+        return -1;
+    }
+
     let indexArray = [];
     for (let i = 0; i < givenString.length; i++) {
         if(givenString[i] == charToFind) {
@@ -49,8 +59,14 @@ function findCharIndexes(givenString, charToFind) {
 }
 
 function findSubstringIndexes(givenString, subStringToFind) {
-    //if substring to search is empty or undefined
-    if(subStringToFind == '' || subStringToFind == undefined) {
+    //check if given string is empty or undefined
+    let isInvalid = ifStringEmptyOrUndef(givenString);
+    if(isInvalid) {
+        return -1;
+    }
+    //if substring is empty or undefined
+    let isSubstringInvalid = ifCharEmptyOrUndef(subStringToFind);
+    if(isSubstringInvalid) {
         return -1;
     }
 
@@ -68,6 +84,17 @@ function findSubstringIndexes(givenString, subStringToFind) {
         continue;
     }
     return foundPosition;
+}
+
+function ifStringEmptyOrUndef(givenString) {
+    if(givenString == '' || givenString == undefined) {
+        return true;
+    }
+}
+function ifCharEmptyOrUndef(charToFind) {
+    if(charToFind == '' || charToFind == undefined) {
+        return true;
+    }
 }
 
 module.exports = {calculateStringLength, findCharIndex, findCharIndexes, findSubstringIndexes}
