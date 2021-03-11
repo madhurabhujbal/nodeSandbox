@@ -23,8 +23,22 @@ describe("For empty or undefined string", function() {
 });
 
 describe("For a given valid and non-empty string", function() {
-    it("Should return correct length of the string", function(){
+    it("Should return length of the string", function(){
         let length = stringOperations.calculateStringLength('Manchester');
         assert.equal(length, 10);
+    });
+});
+
+describe("For a given character to be searched in a string", function() {
+    it("Should return position of character in the string", function(){
+        let position = stringOperations.findCharIndex('Manchester', 's');
+        assert.equal(position, 7);
+    });
+});
+
+describe("For a given character that occurs multiple times in a string", function() {
+    it("Should return all the positions of character in the string", function(){
+        let positions = stringOperations.findCharIndexes('amsterdam', 'a');
+        assert.deepEqual(positions, [1, 8]);
     });
 });
