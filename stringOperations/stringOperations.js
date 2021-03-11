@@ -79,7 +79,7 @@ function findSubstringIndexes(givenString, subStringToFind) {
                     continue outer;
                 }
             }
-            return foundPosition;
+            return foundPosition + 1;
         }
     }
     return -1;
