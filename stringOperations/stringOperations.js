@@ -71,15 +71,15 @@ function findSubstringIndexes(givenString, subStringToFind) {
     }
 
     let foundPosition;
-    for (let i = 0; i < givenString.length; i++) {
+    outer: for (let i = 0; i < givenString.length - subStringToFind.length + 1; i++) {
         if(subStringToFind[0] == givenString[i]) {
             foundPosition = i;
             for(let j = 1; j < subStringToFind.length; j++) {
-                if(subStringToFind[j] == givenString[foundPosition + j]) {
-                    return foundPosition;
+                if(subStringToFind[j] != givenString[foundPosition + j]) {
+                    continue outer;
                 }
-                break;
             }
+            return foundPosition;
         }
     }
     return -1;
