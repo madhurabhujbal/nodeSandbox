@@ -76,14 +76,13 @@ function findSubstringIndexes(givenString, subStringToFind) {
             foundPosition = i;
             for(let j = 1; j < subStringToFind.length; j++) {
                 if(subStringToFind[j] == givenString[foundPosition + j]) {
-                    continue;
+                    return foundPosition;
                 }
-                return -1;
+                break;
             }
         }
-        continue;
     }
-    return foundPosition;
+    return -1;
 }
 
 function ifStringEmptyOrUndef(givenString) {

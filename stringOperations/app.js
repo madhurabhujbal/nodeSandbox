@@ -1,8 +1,8 @@
 const stringOperations = require('./stringOperations');
 
-let givenString = 'Madhura';
+let givenString = 'hello';
 let charToFind = '' ;
-let subStringToFind = 'dhur';
+let subStringToFind = 'lo';
 
 let stringLength = stringOperations.calculateStringLength(givenString);
 console.log(`Length of given string ${givenString} is ${stringLength}`);
