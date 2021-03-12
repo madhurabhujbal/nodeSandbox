@@ -48,4 +48,9 @@ describe("For a given substring", function() {
         let position = stringOperations.findSubstringIndexes('opposite', 'site');
         assert.equal(position, 5);
     });
+
+    it("Should return invalid position if substring is not present in string", function(){
+        let position = stringOperations.findSubstringIndexes('opposite', 'pose');
+        assert.equal(position, -1);
+    });
 });
