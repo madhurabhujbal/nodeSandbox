@@ -1,11 +1,15 @@
 
-let num = 4;
+let num = 10;
 let pattern = patternMaker(num);
 for(let i = 0; i < pattern.length; i++) {
     console.log(pattern[i]);
 }
 
 function patternMaker(num) {
+    if(num == 0 || num == undefined) {
+        return ['-1'];
+    }
+
     let pattern = [];
     for(let i = 0; i < num; i++) {
         //print i+1 times
@@ -15,7 +19,6 @@ function patternMaker(num) {
         }
         pattern.push(myString)
     }
-
     for(let i = num - 1; i > 0; i--) {
         //print i-1 times
         let myString = "";
