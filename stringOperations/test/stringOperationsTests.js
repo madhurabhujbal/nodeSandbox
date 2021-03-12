@@ -22,7 +22,26 @@ describe("For empty or undefined string", function() {
     });
 });
 
-describe("For a given valid and non-empty string", function() {
+describe("For an empty or undefined character/s or substring to be searched in a string", function() {
+    it("Should return invalid index", function() {
+        let index = stringOperations.findCharIndex('main', '');
+        assert.equal(index, -1);
+        index = stringOperations.findCharIndex('main', undefined);
+        assert.equal(index, -1);
+
+        index = stringOperations.findCharIndexes('main', '');
+        assert.equal(index, -1);
+        index = stringOperations.findCharIndexes('main', undefined);
+        assert.equal(index, -1);
+
+        index = stringOperations.findSubstringIndexes('main', '');
+        assert.equal(index, -1);
+        index = stringOperations.findSubstringIndexes('main', undefined);
+        assert.equal(index, -1);
+    });
+});
+
+describe("For a given string", function() {
     it("Should return length of the string", function(){
         let length = stringOperations.calculateStringLength('Manchester');
         assert.equal(length, 10);
