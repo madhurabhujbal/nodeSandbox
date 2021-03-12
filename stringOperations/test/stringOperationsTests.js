@@ -42,3 +42,10 @@ describe("For a given character that occurs multiple times in a string", functio
         assert.deepEqual(positions, [1, 8]);
     });
 });
+
+describe("For a given substring", function() {
+    it("Should return the position of substring in the string", function(){
+        let position = stringOperations.findSubstringIndexes('opposite', 'site');
+        assert.equal(position, 5);
+    });
+});
