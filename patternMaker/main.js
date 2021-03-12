@@ -1,5 +1,5 @@
 
-let num = 10;
+let num = 4;
 let pattern = patternMaker(num);
 for(let i = 0; i < pattern.length; i++) {
     console.log(pattern[i]);
@@ -7,7 +7,7 @@ for(let i = 0; i < pattern.length; i++) {
 
 function patternMaker(num) {
     if(num == 0 || num == undefined) {
-        return ['-1'];
+        return [];
     }
 
     let pattern = [];
