@@ -4,7 +4,7 @@
 // let numbersInArray = 5;
 // let resultArray = getRandomNumberArray(numbersInArray, minValue, maxValue);
 // console.log(resultArray);
-let resultArray = [1, 2, 4, 3, 5];
+let resultArray = [1, 1, 4, 3, 5];
 let duplicateCount = findDuplicates(resultArray);
 console.log(duplicateCount);
 
@@ -26,6 +26,7 @@ function generateRandomNumber(minValue, maxValue) {
 
 function findDuplicates(inputArray) {
     let counts = {};
+    let duplicates = 0;
     for(let i = 0; i < inputArray.length; i++) {
         let curr = inputArray[i];
         if(counts[curr] == undefined) {
@@ -34,14 +35,7 @@ function findDuplicates(inputArray) {
         }
         else {
             counts[curr] = counts[curr] + 1;
-        }
-    }
-    
-    // count duplicates
-    let duplicates = 0;
-    for(let [key, value] of Object.entries(counts)) {
-        if(value > 1) {
-            duplicates = duplicates + 1;
+            duplicates += 1;
         }
     }
     return duplicates;
