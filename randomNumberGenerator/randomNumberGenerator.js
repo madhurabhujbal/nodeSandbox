@@ -1,10 +1,10 @@
 
-// let minValue = 1;
-// let maxValue = 100;
-// let numbersInArray = 5;
-// let resultArray = getRandomNumberArray(numbersInArray, minValue, maxValue);
-// console.log(resultArray);
-let resultArray = [1, 2, 1, 3, 1];
+let minValue = 1;
+let maxValue = 6;
+let numbersInArray = 5;
+let resultArray = getRandomNumberArray(numbersInArray, minValue, maxValue);
+console.log(resultArray);
+// let resultArray = [1, 2, 1, 3, 1];
 let duplicateCount = findDuplicates(resultArray);
 console.log(duplicateCount);
 
@@ -31,7 +31,7 @@ function findDuplicates(resultArray) {
             if(j == i) {
                 continue;
             }
-            
+
             if(resultArray[i] == resultArray[j]) {
                 count = count + 1;
             }
