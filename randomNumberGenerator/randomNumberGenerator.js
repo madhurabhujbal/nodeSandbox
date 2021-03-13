@@ -1,10 +1,10 @@
 
-let minValue = 1;
-let maxValue = 6;
-let numbersInArray = 5;
-let resultArray = getRandomNumberArray(numbersInArray, minValue, maxValue);
-console.log(resultArray);
-// let resultArray = [1, 2, 1, 3, 1];
+// let minValue = 1;
+// let maxValue = 6;
+// let numbersInArray = 5;
+// let resultArray = getRandomNumberArray(numbersInArray, minValue, maxValue);
+// console.log(resultArray);
+let resultArray = [1, 2, 4, 3, 5];
 let duplicateCount = findDuplicates(resultArray);
 console.log(duplicateCount);
 
@@ -24,18 +24,25 @@ function generateRandomNumber(minValue, maxValue) {
     return Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
 }
 
-function findDuplicates(resultArray) {
-    let count = 0;
-    for(let i = 0; i < resultArray.length; i++) {
-        for(let j = 0; j < resultArray.length; j++) {
-            if(j == i) {
-                continue;
-            }
-
-            if(resultArray[i] == resultArray[j]) {
-                count = count + 1;
-            }
+function findDuplicates(inputArray) {
+    let counts = {};
+    for(let i = 0; i < inputArray.length; i++) {
+        let curr = inputArray[i];
+        if(counts[curr] == undefined) {
+            //first occurence of element
+            counts[curr] = 1;
+        }
+        else {
+            counts[curr] = counts[curr] + 1;
         }
     }
-    return count;
+    
+    // count duplicates
+    let duplicates = 0;
+    for(let [key, value] of Object.entries(counts)) {
+        if(value > 1) {
+            duplicates = duplicates + 1;
+        }
+    }
+    return duplicates;
 }
