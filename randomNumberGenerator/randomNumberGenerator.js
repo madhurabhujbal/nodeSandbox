@@ -49,8 +49,8 @@ let minValue = 1;
 let maxValue = 100;
 let numbersInArray = 5;
 let resultArray = getRandomNumberArray(numbersInArray, minValue, maxValue);
-// console.log(resultArray);
+console.log(resultArray);
 let duplicateCount = findDuplicates(resultArray);
-// console.log(duplicateCount);
+console.log(duplicateCount);
 
 module.exports = {getRandomNumberArray, generateRandomNumber, findDuplicates}
