@@ -1,4 +1,8 @@
 function getRandomNumberArray(numbersInArray, minValue, maxValue) {
+    if(numbersInArray == '' || numbersInArray == undefined) {
+        return [];
+    }
+
     let randomNumberArray = [];
     let randomNumber;
     for(let i = 0; i < numbersInArray; i++) {
