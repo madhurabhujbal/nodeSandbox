@@ -13,6 +13,17 @@ describe('If required random number array length is empty or undefined', functio
     });
 });
 
+describe('For lower and upper limit of array element', function() {
+    describe('If upper limit is less than lower limit', function() {
+        it('Should return array with error code', function(){
+            let lowerLimit = 10;
+            let upperLimit = 5;
+            randomNumberArray = randomNumberGenerator.getRandomNumberArray(3, lowerLimit, upperLimit);
+            assert.deepEqual(randomNumberArray, [-1]);
+        });
+    });
+});
+
 describe('For duplicate values in the input array', function() {
     it('function should return number of duplicates in the array', function() {
         let inputArray = [1, 2, 3, 1, 1, 1]

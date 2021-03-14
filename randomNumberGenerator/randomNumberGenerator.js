@@ -3,6 +3,10 @@ function getRandomNumberArray(numbersInArray, minValue, maxValue) {
         return [];
     }
 
+    if(minValue > maxValue) {
+        return [-1];
+    }
+
     let randomNumberArray = [];
     let randomNumber;
     for(let i = 0; i < numbersInArray; i++) {
