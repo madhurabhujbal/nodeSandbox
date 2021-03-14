@@ -40,3 +40,5 @@ let resultArray = getRandomNumberArray(numbersInArray, minValue, maxValue);
 console.log(resultArray);
 let duplicateCount = findDuplicates(resultArray);
 console.log(duplicateCount);
+
+module.exports = {getRandomNumberArray, generateRandomNumber, findDuplicates}

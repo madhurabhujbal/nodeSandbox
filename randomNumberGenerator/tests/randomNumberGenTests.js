@@ -1,0 +1,1 @@
+let randomNumberGenerator = require('../randomNumberGenerator');
