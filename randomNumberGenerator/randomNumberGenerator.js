@@ -7,6 +7,10 @@ function getRandomNumberArray(numbersInArray, minValue, maxValue) {
         return [-1];
     }
 
+    if(minValue == '' || minValue == undefined) {
+        minValue = 0;
+    }
+
     let randomNumberArray = [];
     let randomNumber;
     for(let i = 0; i < numbersInArray; i++) {
@@ -45,8 +49,8 @@ let minValue = 1;
 let maxValue = 100;
 let numbersInArray = 5;
 let resultArray = getRandomNumberArray(numbersInArray, minValue, maxValue);
-console.log(resultArray);
+// console.log(resultArray);
 let duplicateCount = findDuplicates(resultArray);
-console.log(duplicateCount);
+// console.log(duplicateCount);
 
 module.exports = {getRandomNumberArray, generateRandomNumber, findDuplicates}
