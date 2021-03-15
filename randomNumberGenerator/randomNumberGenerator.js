@@ -3,16 +3,20 @@ function getRandomNumberArray(numbersInArray, minValue, maxValue) {
         return [];
     }
     
-    if(isNaN(numbersInArray) || isNaN(minValue) || isNaN(maxValue)) {
-        return [-1];
+    if(maxValue == '' || maxValue == undefined) {
+        maxValue = 100;
     }
-
+    
+    if(minValue == '' || minValue == undefined) {
+        minValue = 0;
+    }
+    
     if(minValue > maxValue) {
         return [-1];
     }
 
-    if(minValue == '' || minValue == undefined) {
-        minValue = 0;
+    if(isNaN(numbersInArray) || isNaN(minValue) || isNaN(maxValue)) {
+        return [-1];
     }
 
     let randomNumberArray = [];
@@ -50,7 +54,7 @@ function findDuplicates(inputArray) {
 }
 
 let minValue = 1;
-let maxValue = 10;
+let maxValue = 100;
 let numbersInArray = 5;
 let resultArray = getRandomNumberArray(numbersInArray, minValue, maxValue);
 console.log(resultArray);

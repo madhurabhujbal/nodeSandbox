@@ -44,6 +44,21 @@ describe('For lower and upper limit of array element', function() {
             assert.isAtLeast(min, 0, "Lower limit is not less than 0");
         });
     });
+
+    describe('If upper limit is empty or undefined', function() {
+        it('Should set 100 as the upper limit', function() {
+            let upperLimit = '';
+            let arrayLength = 5;
+            let randomNumberArray = randomNumberGenerator.getRandomNumberArray(5, 1, upperLimit);
+            let max = randomNumberArray[0];
+            for(let i = 1; i < arrayLength; i++) {
+                if(randomNumberArray[i] > max) {
+                    max = randomNumberArray[i];
+                }
+            }
+            assert.isAtMost(max, 100, "Upper limit is not 100");
+        });
+    });
 });
 
 describe('For duplicate values in the input array', function() {
