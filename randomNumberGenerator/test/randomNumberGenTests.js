@@ -1,6 +1,13 @@
 let randomNumberGenerator = require('../randomNumberGenerator');
 const assert = require('chai').assert;
 
+describe('If either of values amongst lower limit, upper limit or array length is not a number', function() {
+    it('Should return array with error code', function() {
+        let randomNumberArray = randomNumberGenerator.getRandomNumberArray(4, 8, 'fifteen');
+        assert.deepEqual(randomNumberArray, [-1]);
+    });
+});
+
 describe('If required random number array length is empty or undefined', function() {
     it('Should return an empty array', function() {
         let arrayLength = '';

@@ -2,6 +2,10 @@ function getRandomNumberArray(numbersInArray, minValue, maxValue) {
     if(numbersInArray == '' || numbersInArray == undefined) {
         return [];
     }
+    
+    if(isNaN(numbersInArray) || isNaN(minValue) || isNaN(maxValue)) {
+        return [-1];
+    }
 
     if(minValue > maxValue) {
         return [-1];
@@ -46,7 +50,7 @@ function findDuplicates(inputArray) {
 }
 
 let minValue = 1;
-let maxValue = 100;
+let maxValue = 10;
 let numbersInArray = 5;
 let resultArray = getRandomNumberArray(numbersInArray, minValue, maxValue);
 console.log(resultArray);
