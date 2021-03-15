@@ -1,0 +1,20 @@
+{
+  "name": "randomnumbergenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "randomNumberGenerator.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^4.3.4"
+  },
+  "devDependencies": {
+    "mocha": "^8.3.2"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC"
+}

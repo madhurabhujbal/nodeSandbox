@@ -1,4 +1,24 @@
 function getRandomNumberArray(numbersInArray, minValue, maxValue) {
+    if(numbersInArray == '' || numbersInArray == undefined) {
+        return [];
+    }
+    
+    if(maxValue == '' || maxValue == undefined) {
+        maxValue = 100;
+    }
+    
+    if(minValue == '' || minValue == undefined) {
+        minValue = 0;
+    }
+    
+    if(minValue > maxValue) {
+        return [-1];
+    }
+
+    if(isNaN(numbersInArray) || isNaN(minValue) || isNaN(maxValue)) {
+        return [-1];
+    }
+
     let randomNumberArray = [];
     let randomNumber;
     for(let i = 0; i < numbersInArray; i++) {
@@ -40,3 +60,5 @@ let resultArray = getRandomNumberArray(numbersInArray, minValue, maxValue);
 console.log(resultArray);
 let duplicateCount = findDuplicates(resultArray);
 console.log(duplicateCount);
+
+module.exports = {getRandomNumberArray, generateRandomNumber, findDuplicates}
