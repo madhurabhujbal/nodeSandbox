@@ -1,5 +1,5 @@
 
-let num = 20;
+let num = 8;
 let pattern = patternMaker(num);
 for(let i = 0; i < pattern.length; i++) {
     console.log(pattern[i]);
@@ -15,10 +15,10 @@ function patternMaker(num) {
         let spaces = "";
         let stars = "";
         for(let s = 0; s < (j - 2) + 1; s++) {
-            spaces += " ";
+            spaces += "  ";
         }
         for(let r = 0; r < (i * 2) - 1; r++) {
-            stars += "*";
+            stars += " *";
         }
         pattern.push(spaces + stars)
     }
@@ -27,10 +27,10 @@ function patternMaker(num) {
         let spaces = "";
         let stars = "";
         for(let s = 0; s <= (j - 2) + 1; s++) {
-            spaces += " ";
+            spaces += "  ";
         }
         for(let r = 0; r < (i * 2) - 1; r++) {
-            stars += "*";
+            stars += " *";
         }
         pattern.push(spaces + stars)
     }
