@@ -52,6 +52,7 @@ function findDuplicates(inputArray) {
     }
     return duplicates;
 }
+
 function getMinRandomNumber(inputArray) {
     let min = inputArray[0];
     for(let i = 0; i < inputArray.length; i++) {
@@ -60,6 +61,16 @@ function getMinRandomNumber(inputArray) {
         }
     }
     return min;
+}
+
+function getMaxRandomNumber(inputArray) {
+    let max = inputArray[0];
+    for(let i = 0; i < inputArray.length; i++) {
+        if (inputArray[i] > max) {
+            max = inputArray[i];
+        }
+    }
+    return max;
 }
 
 let minValue = 1;
@@ -71,5 +82,7 @@ let duplicateCount = findDuplicates(resultArray);
 console.log(duplicateCount);
 let minRandomNumber = getMinRandomNumber(resultArray);
 console.log(`Lowest value in random number array: ${minRandomNumber}`);
+let maxRandomNumber = getMaxRandomNumber(resultArray);
+console.log(`Highest value in random number array: ${maxRandomNumber}`);
 
 module.exports = {getRandomNumberArray, generateRandomNumber, findDuplicates}
