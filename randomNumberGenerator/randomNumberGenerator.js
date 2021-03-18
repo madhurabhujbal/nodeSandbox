@@ -98,4 +98,4 @@ console.log(`Highest value in random number array: ${maxRandomNumber}`);
 let averageRandomNumber = getAverageRandomNumber(resultArray);
 console.log(`Average value of random number array: ${averageRandomNumber}`);
 
-module.exports = {getRandomNumberArray, generateRandomNumber, findDuplicates}
+module.exports = {getRandomNumberArray, generateRandomNumber, findDuplicates, getMinRandomNumber, getMaxRandomNumber, getAverageRandomNumber}
