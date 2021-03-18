@@ -53,6 +53,37 @@ function findDuplicates(inputArray) {
     return duplicates;
 }
 
+function getMinRandomNumber(inputArray) {
+    let min = inputArray[0];
+    for(let i = 0; i < inputArray.length; i++) {
+        if (inputArray[i] < min) {
+            min = inputArray[i];
+        }
+    }
+    return min;
+}
+
+function getMaxRandomNumber(inputArray) {
+    let max = inputArray[0];
+    for(let i = 0; i < inputArray.length; i++) {
+        if (inputArray[i] > max) {
+            max = inputArray[i];
+        }
+    }
+    return max;
+}
+
+function getAverageRandomNumber(inputArray) {
+    let average;
+    let addition = 0;
+    for(let i = 0; i < inputArray.length; i++) {
+        addition += inputArray[i];
+    }
+    average = (addition / inputArray.length);
+    console.log(`addition of numbers in array: ${addition}`);
+    return average;
+}
+
 let minValue = 1;
 let maxValue = 100;
 let numbersInArray = 5;
@@ -60,5 +91,11 @@ let resultArray = getRandomNumberArray(numbersInArray, minValue, maxValue);
 console.log(resultArray);
 let duplicateCount = findDuplicates(resultArray);
 console.log(duplicateCount);
+let minRandomNumber = getMinRandomNumber(resultArray);
+console.log(`Lowest value in random number array: ${minRandomNumber}`);
+let maxRandomNumber = getMaxRandomNumber(resultArray);
+console.log(`Highest value in random number array: ${maxRandomNumber}`);
+let averageRandomNumber = getAverageRandomNumber(resultArray);
+console.log(`Average value of random number array: ${averageRandomNumber}`);
 
-module.exports = {getRandomNumberArray, generateRandomNumber, findDuplicates}
+module.exports = {getRandomNumberArray, generateRandomNumber, findDuplicates, getMinRandomNumber, getMaxRandomNumber, getAverageRandomNumber}
