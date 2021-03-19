@@ -63,8 +63,28 @@ describe('For lower and upper limit of array element', function() {
 
 describe('For duplicate values in the input array', function() {
     it('function should return number of duplicates in the array', function() {
-        let inputArray = [1, 2, 3, 1, 1, 1]
+        let inputArray = [1, 2, 3, 1, 1, 1];
         let duplicateCount = randomNumberGenerator.findDuplicates(inputArray);
         assert.equal(duplicateCount, '1'); 
+    });
+});
+
+describe('Operations on random number array', function() {
+    describe('In a given array', function() {
+        let inputArray = [23, 45, 22, 56, 17];
+        it('function should return the minimum value in the array', function() {
+            let minimumValue = randomNumberGenerator.getMinRandomNumber(inputArray);
+            assert.equal(minimumValue, '17');
+        });
+
+        it('function should return the maximum value in the array', function() {
+            let maximumValue = randomNumberGenerator.getMaxRandomNumber(inputArray);
+            assert.equal(maximumValue, '56');
+        });
+
+        it('function should return the average value of numbers in the array', function() {
+            let averageValue = randomNumberGenerator.getAverageRandomNumber(inputArray);
+            assert.equal(averageValue, '32.6');
+        });
     });
 });
