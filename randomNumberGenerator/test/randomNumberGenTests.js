@@ -87,4 +87,12 @@ describe('Operations on random number array', function() {
             assert.equal(averageValue, '32.6');
         });
     });
+
+    describe('If random array is empty', function() {
+        let inputArray = [];
+        it('function for calculating minimum value should return error code', function() {
+            let minimumValue = randomNumberGenerator.getMinRandomNumber(inputArray);
+            assert.equal(minimumValue, '-1');
+        });
+    });
 });

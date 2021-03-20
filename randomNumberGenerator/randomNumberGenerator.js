@@ -54,6 +54,9 @@ function findDuplicates(inputArray) {
 }
 
 function getMinRandomNumber(inputArray) {
+    if(inputArray == '' || inputArray == undefined) {
+        return -1;
+    }
     let min = inputArray[0];
     for(let i = 0; i < inputArray.length; i++) {
         if (inputArray[i] < min) {
