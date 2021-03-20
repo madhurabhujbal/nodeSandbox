@@ -67,6 +67,9 @@ function getMinRandomNumber(inputArray) {
 }
 
 function getMaxRandomNumber(inputArray) {
+    if(inputArray == '' || inputArray == undefined) {
+        return -1;
+    }
     let max = inputArray[0];
     for(let i = 0; i < inputArray.length; i++) {
         if (inputArray[i] > max) {

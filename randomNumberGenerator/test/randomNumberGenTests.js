@@ -94,5 +94,10 @@ describe('Operations on random number array', function() {
             let minimumValue = randomNumberGenerator.getMinRandomNumber(inputArray);
             assert.equal(minimumValue, '-1');
         });
+
+        it('function for calculating maximum value should return error code', function() {
+            let maximumValue = randomNumberGenerator.getMaxRandomNumber(inputArray);
+            assert.equal(maximumValue, '-1');
+        });
     });
 });
