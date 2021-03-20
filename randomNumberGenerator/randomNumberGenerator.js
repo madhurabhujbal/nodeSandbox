@@ -80,6 +80,9 @@ function getMaxRandomNumber(inputArray) {
 }
 
 function getAverageRandomNumber(inputArray) {
+    if(inputArray == '' || inputArray == undefined) {
+        return -1;
+    }
     let average;
     let addition = 0;
     for(let i = 0; i < inputArray.length; i++) {

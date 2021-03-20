@@ -99,5 +99,10 @@ describe('Operations on random number array', function() {
             let maximumValue = randomNumberGenerator.getMaxRandomNumber(inputArray);
             assert.equal(maximumValue, '-1');
         });
+
+        it('function for calculating average value should return error code', function() {
+            let averageRandomNumber = randomNumberGenerator.getAverageRandomNumber(inputArray);
+            assert.equal(averageRandomNumber, '-1');
+        });
     });
 });
