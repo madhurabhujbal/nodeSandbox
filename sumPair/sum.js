@@ -14,3 +14,5 @@ let targetSum = 2020;
 
 let result = getPair(sampleInput, targetSum);
 console.log("Result pair: ", result);
+
+module.exports = {getPair};
