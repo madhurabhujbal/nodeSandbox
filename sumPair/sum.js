@@ -20,18 +20,17 @@ function getPair(input, targetSum) {
 }
 
 function getInput(fileName) {
-    let numbersArray = [];
-    var readFile = readline.createInterface({
-        input: fs.createReadStream(fileName)
-    });
-
-    readFile.on('line', function(line) {
-        let number = parseInt(line);
-        console.log('number from file:', number);
-        numbersArray.push(number);
-        console.log('number array:', numbersArray);
-    });
     // Read input data from the given file
+    let numbersArray = [];
+    try {
+        const data = fs.readFileSync(fileName, 'utf-8');
+        const lines = data.split(/\r?\n/);
+        for(let i = 0; i < lines.length; i++) {
+            numbersArray.push(parseInt(lines[i]));
+        }
+    } catch(err) {
+        console.error(err);
+    }
     return numbersArray;
 }
 
