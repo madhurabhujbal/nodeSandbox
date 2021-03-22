@@ -1,3 +1,6 @@
+const fs = require('fs');
+const readline = require('readline');
+
 function getPair(input, targetSum) {
     // Scan the input array and return a pair that matches target sum, empty array for no match
     let resultArray = [];
@@ -17,8 +20,19 @@ function getPair(input, targetSum) {
 }
 
 function getInput(fileName) {
+    let numbersArray = [];
+    var readFile = readline.createInterface({
+        input: fs.createReadStream(fileName)
+    });
+
+    readFile.on('line', function(line) {
+        let number = parseInt(line);
+        console.log('number from file:', number);
+        numbersArray.push(number);
+        console.log('number array:', numbersArray);
+    });
     // Read input data from the given file
-    return [ 1721, 979, 366, 299, 675, 1456];
+    return numbersArray;
 }
 
 let sampleInput = getInput("smallInput.txt");
