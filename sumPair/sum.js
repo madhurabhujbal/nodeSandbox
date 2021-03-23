@@ -34,7 +34,7 @@ function getInput(fileName) {
     return numbersArray;
 }
 
-let sampleInput = getInput("smallInput.txt");
+let sampleInput = getInput("input.txt");
 let targetSum = 2020;
 
 let result = getPair(sampleInput, targetSum);
