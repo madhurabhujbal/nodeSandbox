@@ -67,7 +67,7 @@ let targetSum = 2020;
 let result = getPair(sampleInput, targetSum);
 console.log("Result pair: ", result);
 
-let numberOfDuplicates = duplicateFind(result);
+let numberOfDuplicates = duplicateFind(sampleInput);
 console.log("Number of duplicates in the input: ", numberOfDuplicates);
 
 module.exports = {getPair};
