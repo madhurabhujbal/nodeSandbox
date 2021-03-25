@@ -25,6 +25,24 @@ function getPair(input, targetSum) {
     return resultArray;
 }
 
+function getTriade(input, targetSum) {
+    // Scan the input array and return a pair that matches target sum, empty array for no match
+    let resultArray = [];
+
+    for (let i = 0; i < input.length; i++) {
+        for(let j = i + 1; j < input.length; j++) {
+            for(let k = j + 1; k < input.length; k++) {
+                if(input[i] + input[j] + input[k] === targetSum) {
+                    resultArray.push(input[i]);
+                    resultArray.push(input[j]);
+                    resultArray.push(input[k]);
+                    return resultArray;
+                }
+            }
+        }
+    }
+    return resultArray;
+}
 
 function duplicateFind(input) {
     let counts = {};
@@ -67,7 +85,10 @@ let targetSum = 2020;
 let result = getPair(sampleInput, targetSum);
 console.log("Result pair: ", result);
 
+result = getTriade(sampleInput, targetSum);
+console.log("Result traide: ", result);
+
 let numberOfDuplicates = duplicateFind(sampleInput);
 console.log("Number of duplicates in the input: ", numberOfDuplicates);
 
-module.exports = {getPair};
+module.exports = {getPair, getTriade};
