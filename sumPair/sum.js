@@ -1,5 +1,4 @@
 const fs = require('fs');
-const readline = require('readline');
 
 function getPair(input, targetSum) {
     // Scan the input array and return a pair that matches target sum, empty array for no match
