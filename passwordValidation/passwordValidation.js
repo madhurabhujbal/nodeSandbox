@@ -13,7 +13,16 @@ function processRecord(line) {
     // Get input string from the third column
     let password = cols[2];
 
-    console.log(`Upper: ${upperLimit}, Lower: ${lowerLimit}, charToMatch: ${charToMatch}, password: ${password}`);
+    let count = 0;
+    for(let i = 0; i < password.length; i++){
+        if(password[i] == charToMatch) {
+            count++;
+        }
+    }
+    if(count >= lowerLimit && count <= upperLimit) {
+        console.log(line);
+        return true;
+    }
     return false;
 }
 
@@ -33,5 +42,5 @@ function processInput(fileName) {
     return result;
 }
 
-let result = processInput('sampleInput.txt');
+let result = processInput('input.txt');
 console.log("Result : " + result);
