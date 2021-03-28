@@ -65,5 +65,7 @@ function processInput(fileName) {
     return result;
 }
 
-let result = processInput('sampleInput.txt');
+let result = processInput('input.txt');
 console.log("Result : " + result);
+
+module.exports = {processRecord, passwordValidation1, passwordValidation2}
