@@ -55,7 +55,7 @@ function processInput(fileName) {
         const lines = data.split(/\r?\n/);
         for(let i = 0; i < lines.length; i++) {
             let recordData = processRecord(lines[i]);
-            if(passwordValidation2(recordData)) {
+            if(passwordValidation1(recordData)) {
                 result++;
             }
         }
@@ -68,4 +68,4 @@ function processInput(fileName) {
 let result = processInput('input.txt');
 console.log("Result : " + result);
 
-module.exports = {processRecord, passwordValidation1, passwordValidation2}
+module.exports = {processInput, passwordValidation1, passwordValidation2}
