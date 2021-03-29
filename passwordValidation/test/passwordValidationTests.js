@@ -25,7 +25,7 @@ describe("For a given record in string format", function() {
     it('should split every record field, store it in object and return the object', function() {
         let record = '1-3 a: abcde';
         let dataObject = passwordValidation.processRecord(record);
-        expect(dataObject, {lowerLimit: 1, upperLimit: 3, charToMatch: 'a', password: 'abcde'});
+        expect(dataObject).to.eql({lowerLimit: 1, upperLimit: 3, charToMatch: 'a', password: 'abcde'});
     });
 });
 
