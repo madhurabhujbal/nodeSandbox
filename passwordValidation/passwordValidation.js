@@ -12,17 +12,26 @@ function processRecord(line) {
 
     // Get input string from the third column
     let password = cols[2];
+    console.log(password);
 
-    let count = 0;
-    for(let i = 0; i < password.length; i++){
-        if(password[i] == charToMatch) {
-            count++;
-        }
-    }
-    if(count >= lowerLimit && count <= upperLimit) {
-        console.log(line);
+    if(password[lowerLimit - 1] == charToMatch && password[upperLimit - 1] != charToMatch) {
         return true;
     }
+
+    if(password[lowerLimit - 1] != charToMatch && password[upperLimit - 1] == charToMatch) {
+        return true;
+    }
+
+    // let count = 0;
+    // for(let i = 0; i < password.length; i++){
+    //     if(password[i] == charToMatch) {
+    //         count++;
+    //     }
+    // }
+    // if(count >= lowerLimit && count <= upperLimit) {
+    //     console.log(line);
+    //     return true;
+    // }
     return false;
 }
 
@@ -42,5 +51,5 @@ function processInput(fileName) {
     return result;
 }
 
-let result = processInput('input.txt');
+let result = processInput('sampleInput.txt');
 console.log("Result : " + result);
