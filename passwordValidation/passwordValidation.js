@@ -18,10 +18,10 @@ function processRecord(line) {
     let password = cols[2];
     dataObject['password'] = password;
     return dataObject;
-
 }
 
 function passwordValidation2(recordData) {
+    //Given char should occur either at lowerlimit or at upperlimit position to be valid
     let password = recordData.password;
     if(password[recordData.lowerLimit - 1] == recordData.charToMatch && password[recordData.upperLimit - 1] != recordData.charToMatch) {
         return true;
@@ -34,6 +34,7 @@ function passwordValidation2(recordData) {
 }
 
 function passwordValidation1(recordData) {
+    //Given char should occur min lowerlimit and max upperlimit no. of times to be valid
     let password = recordData.password;
     let count = 0;
     for(let i = 0; i < password.length; i++){
@@ -47,15 +48,15 @@ function passwordValidation1(recordData) {
     return false;
 }
 
-
-function processInput(fileName) {
+function processInput(fileName, option = 1) {
     let result = 0;
+    let validationMethod = option == 1 ? passwordValidation1 : passwordValidation2;
     try {
         const data = fs.readFileSync(fileName, 'utf-8');
         const lines = data.split(/\r?\n/);
         for(let i = 0; i < lines.length; i++) {
             let recordData = processRecord(lines[i]);
-            if(passwordValidation2(recordData)) {
+            if(validationMethod(recordData)) {
                 result++;
             }
         }
@@ -65,5 +66,7 @@ function processInput(fileName) {
     return result;
 }
 
-let result = processInput('sampleInput.txt');
+let result = processInput('input.txt');
 console.log("Result : " + result);
+
+module.exports = {processInput, passwordValidation1, passwordValidation2, processRecord}
