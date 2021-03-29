@@ -48,14 +48,15 @@ function passwordValidation1(recordData) {
 }
 
 
-function processInput(fileName) {
+function processInput(fileName, option = 1) {
     let result = 0;
+    let validationMethod = option == 1 ? passwordValidation1 : passwordValidation2;
     try {
         const data = fs.readFileSync(fileName, 'utf-8');
         const lines = data.split(/\r?\n/);
         for(let i = 0; i < lines.length; i++) {
             let recordData = processRecord(lines[i]);
-            if(passwordValidation1(recordData)) {
+            if(validationMethod(recordData)) {
                 result++;
             }
         }
