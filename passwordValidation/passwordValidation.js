@@ -18,7 +18,6 @@ function processRecord(line) {
     let password = cols[2];
     dataObject['password'] = password;
     return dataObject;
-
 }
 
 function passwordValidation2(recordData) {
@@ -49,7 +48,6 @@ function passwordValidation1(recordData) {
     return false;
 }
 
-
 function processInput(fileName, option = 1) {
     let result = 0;
     let validationMethod = option == 1 ? passwordValidation1 : passwordValidation2;
@@ -71,4 +69,4 @@ function processInput(fileName, option = 1) {
 let result = processInput('input.txt');
 console.log("Result : " + result);
 
-module.exports = {processInput, passwordValidation1, passwordValidation2}
+module.exports = {processInput, passwordValidation1, passwordValidation2, processRecord}
