@@ -10,8 +10,14 @@ describe("For a record that matches the given criteria", function() {
 });
 
 describe("For given number of records", function() {
-    it('should return number of valid records', function() {
+    it('should return number of valid records according to condition1', function() {
         let validRecords = passwordValidation.processInput('sampleInput.txt');
         assert.equal(validRecords, 2);
     });
+
+    it('should return number of valid records according to condition2', function() {
+        let validRecords = passwordValidation.processInput('sampleInput.txt', 2);
+        assert.equal(validRecords, 1);
+    });
 });
+

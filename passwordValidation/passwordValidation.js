@@ -22,6 +22,7 @@ function processRecord(line) {
 }
 
 function passwordValidation2(recordData) {
+    //Given char should occur either at lowerlimit or at upperlimit position to be valid
     let password = recordData.password;
     if(password[recordData.lowerLimit - 1] == recordData.charToMatch && password[recordData.upperLimit - 1] != recordData.charToMatch) {
         return true;
@@ -34,6 +35,7 @@ function passwordValidation2(recordData) {
 }
 
 function passwordValidation1(recordData) {
+    //Given char should occur min lowerlimit and max upperlimit no. of times to be valid
     let password = recordData.password;
     let count = 0;
     for(let i = 0; i < password.length; i++){
