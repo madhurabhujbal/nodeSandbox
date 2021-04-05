@@ -1,4 +1,5 @@
 const fs = require('fs');
+
 function getInput(fileName) {
     // Read input data from the given file
     let numbersArray = [];
@@ -14,5 +15,17 @@ function getInput(fileName) {
     return numbersArray;
 }
 
+function getTreeCount(sampleInput) {
+    let count = 0;
+    for(let i = 1; i < sampleInput.length; i++) {
+        if(sampleInput[i][i * 3] == '#') {
+            count = count + 1;
+        }
+    }
+    return count;
+}
+
 let sampleInput = getInput("smallInput.txt");
-console.log(sampleInput);
+let treeCount = getTreeCount(sampleInput);
+console.log(treeCount);
+// console.log(sampleInput);
