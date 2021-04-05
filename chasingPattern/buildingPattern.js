@@ -18,7 +18,8 @@ function getInput(fileName) {
 function getTreeCount(sampleInput) {
     let count = 0;
     for(let i = 1; i < sampleInput.length; i++) {
-        if(sampleInput[i][i * 3] == '#') {
+        let pos = (i * 3) % sampleInput[i].length;
+        if(sampleInput[i][pos] == '#') {
             count = count + 1;
         }
     }
