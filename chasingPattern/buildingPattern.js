@@ -15,10 +15,10 @@ function getInput(fileName) {
     return numbersArray;
 }
 
-function getTreeCount(sampleInput, right, down) {
+function getTreeCount(sampleInput, right) {
     let count = 0;
     for(let i = 1; i < sampleInput.length; i++) {
-        let pos = (i * 3) % sampleInput[i].length;
+        let pos = (i * right) % sampleInput[i].length;
         if(sampleInput[i][pos] == '#') {
             count = count + 1;
         }
@@ -27,6 +27,6 @@ function getTreeCount(sampleInput, right, down) {
 }
 
 let sampleInput = getInput("smallInput.txt");
-let treeCount = getTreeCount(sampleInput, right, down);
+let treeCount = getTreeCount(sampleInput, 3);
 console.log(treeCount);
 // console.log(sampleInput);
