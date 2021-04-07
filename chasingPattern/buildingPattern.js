@@ -15,18 +15,22 @@ function getInput(fileName) {
     return numbersArray;
 }
 
-function getTreeCount(sampleInput, right) {
+function getTreeCount(sampleInput, right, down) {
     let count = 0;
-    for(let i = 1; i < sampleInput.length; i++) {
-        let pos = (i * right) % sampleInput[i].length;
-        if(sampleInput[i][pos] == '#') {
+    let rowPosition = down;
+    let columnPosition = right;
+    const rowLength = sampleInput[rowPosition].length;
+    for(; rowPosition < sampleInput.length; rowPosition += down) {
+        let pos = columnPosition % rowLength;
+        if(sampleInput[rowPosition][pos] == '#') {
             count = count + 1;
         }
+        columnPosition += right;
     }
     return count;
 }
 
-let sampleInput = getInput("smallInput.txt");
-let treeCount = getTreeCount(sampleInput, 3);
+let sampleInput = getInput("input.txt");
+let treeCount = getTreeCount(sampleInput, 1, 2);
 console.log(treeCount);
-// console.log(sampleInput);
+//87*205*85*79*33
